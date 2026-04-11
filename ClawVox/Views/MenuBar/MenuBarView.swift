@@ -6,7 +6,7 @@ struct MenuBarView: View {
             OrbView()
                 .frame(width: 80, height: 80)
 
-            Text("OpenClaw Buddy")
+            Text("ClawVox")
                 .font(.headline)
                 .foregroundStyle(.white)
 

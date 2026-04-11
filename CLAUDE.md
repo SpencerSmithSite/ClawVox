@@ -1,8 +1,8 @@
-# OpenClaw Buddy
+# ClawVox
 
 A native macOS companion app (think Iron Man's Jarvis) that connects to a locally-running
-[OpenClaw](https://github.com/openclaw) agent via REST and WebSocket, adding a persistent
-menu bar presence, voice I/O, and a conversational chat window.
+OpenClaw agent via REST and WebSocket, adding a persistent menu bar presence, voice I/O,
+and a conversational chat window.
 
 ## Tech Stack
 
@@ -57,5 +57,5 @@ the regenerated `*.xcodeproj/project.pbxproj`.
 ## Building
 
 ```bash
-xcodebuild -scheme "OpenClaw Buddy" -destination 'platform=macOS' build
+xcodebuild -scheme "ClawVox" -destination 'platform=macOS' build
 ```

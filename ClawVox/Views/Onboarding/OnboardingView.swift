@@ -5,7 +5,7 @@ struct OnboardingView: View {
         ZStack {
             Color.black.ignoresSafeArea()
 
-            Text("Welcome to OpenClaw Buddy")
+            Text("Welcome to ClawVox")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)

@@ -1,6 +1,6 @@
-name: OpenClaw Buddy
+name: ClawVox
 options:
-  bundleIdPrefix: com.openclaw
+  bundleIdPrefix: com.clawvox
   deploymentTarget:
     macOS: "13.0"
   xcodeVersion: "15"
@@ -8,20 +8,20 @@ options:
   groupSortPosition: top
 
 targets:
-  OpenClaw Buddy:
+  ClawVox:
     type: application
     platform: macOS
     deploymentTarget: "13.0"
     sources:
-      - path: OpenClawBuddy
+      - path: ClawVox
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.openclaw.buddy
-        PRODUCT_NAME: OpenClaw Buddy
+        PRODUCT_BUNDLE_IDENTIFIER: com.clawvox.app
+        PRODUCT_NAME: ClawVox
         SWIFT_VERSION: 5.9
         ENABLE_HARDENED_RUNTIME: YES
-        CODE_SIGN_ENTITLEMENTS: OpenClawBuddy/OpenClawBuddy.entitlements
-        INFOPLIST_FILE: OpenClawBuddy/Info.plist
+        CODE_SIGN_ENTITLEMENTS: ClawVox/ClawVox.entitlements
+        INFOPLIST_FILE: ClawVox/Info.plist
         GENERATE_INFOPLIST_FILE: NO
         MACOSX_DEPLOYMENT_TARGET: "13.0"
     dependencies:
@@ -29,10 +29,10 @@ targets:
       - sdk: AVFoundation.framework
 
 schemes:
-  OpenClaw Buddy:
+  ClawVox:
     build:
       targets:
-        OpenClaw Buddy: all
+        ClawVox: all
     run:
       config: Debug
     archive:

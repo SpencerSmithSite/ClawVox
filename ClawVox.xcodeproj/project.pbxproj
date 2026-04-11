@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0038B12C20F32E8306685A99 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462648011DA5C5A7A2465B1 /* ConversationViewModel.swift */; };
+		1B9C115E0A293F9FE3692867 /* OpenClawClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88824150F8442EDDFC426503 /* OpenClawClient.swift */; };
+		2AC6C62AAFE12D9B32ECA6D4 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B7B21C1C5C831C22E3B5A /* MainWindowView.swift */; };
+		3FF27E583F99054D0C3DA29B /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5BBBC98022D96724024A5D4 /* Speech.framework */; };
+		41800A1A1E3D6C49E8234AA2 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA944012932658BF2F02FD76 /* AppSettings.swift */; };
+		50838CEDB981A0CCC2A3B6FA /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1830ABA0FAB68E82B36A86 /* SpeechService.swift */; };
+		554FB33ED2CA48BCC53C610E /* TTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1278247ED2653C5381A5EE /* TTSService.swift */; };
+		5B6A2D6B9F0C8BE91B287036 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E344BA8C1CC082CC89496 /* Message.swift */; };
+		5C5B8159E7E5A092A5B1E1A9 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4E0F7D3D96A0D124690ADD /* OnboardingView.swift */; };
+		6BDB207F8D5BC59D880214FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E08189A2080983FD0D73A09 /* AVFoundation.framework */; };
+		6C51120D4002F6E8442A318D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6CDC10B6688A33620E8B45 /* SettingsView.swift */; };
+		6EEA4AE973F00BA7AEBB2BE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0210F7CC29A183A1C37BAED /* Constants.swift */; };
+		6FE039BB0A46E825ADE409D2 /* OrbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BDD80495E74869075914D /* OrbView.swift */; };
+		9C37FD4D430A701705A94BD6 /* ClawVoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E0BB373E6AE73AB887AC06 /* ClawVoxApp.swift */; };
+		AA76FDCA88EF6E534764135B /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DDB5FFBA699048914E645 /* KeychainService.swift */; };
+		AE6BC99658C8ECA657EC4A78 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67D59BDE3888787FF2B1121 /* ConnectionState.swift */; };
+		C8F017012A2DC2376E848823 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C4243B9487804C3EDFBC6 /* SettingsViewModel.swift */; };
+		EB14A7272B4090B395E5F4A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3974396A13917ABCE7AB6 /* Extensions.swift */; };
+		EB6403BCDB6C8F3E14955BA9 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */; };
+		EE1545CE8412A746D5B0FDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */; };
+		F942D22D359F3A42D00C668F /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A9414BCFF7AC3D01ED8307 /* WebSocketClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3E08189A2080983FD0D73A09 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		401C4243B9487804C3EDFBC6 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		4A19C4B2ED3EE943556A8E74 /* ClawVox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClawVox.entitlements; sourceTree = "<group>"; };
+		7F6CDC10B6688A33620E8B45 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		80A9414BCFF7AC3D01ED8307 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
+		88824150F8442EDDFC426503 /* OpenClawClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawClient.swift; sourceTree = "<group>"; };
+		8DF3974396A13917ABCE7AB6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9B6B7B21C1C5C831C22E3B5A /* MainWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowView.swift; sourceTree = "<group>"; };
+		9D1278247ED2653C5381A5EE /* TTSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSService.swift; sourceTree = "<group>"; };
+		A0210F7CC29A183A1C37BAED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A1E0BB373E6AE73AB887AC06 /* ClawVoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClawVoxApp.swift; sourceTree = "<group>"; };
+		A67D59BDE3888787FF2B1121 /* ConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
+		B55DDB5FFBA699048914E645 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		BA944012932658BF2F02FD76 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		BF4E0F7D3D96A0D124690ADD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		CF1830ABA0FAB68E82B36A86 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		CF2E344BA8C1CC082CC89496 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		D462648011DA5C5A7A2465B1 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		E154345A4EC9BAB7C455ECD5 /* ClawVox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClawVox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E16A6A338FC3B040751B1C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5BBBC98022D96724024A5D4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		FE5BDD80495E74869075914D /* OrbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83FE345E7F5DEF549E53A0A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF27E583F99054D0C3DA29B /* Speech.framework in Frameworks */,
+				6BDB207F8D5BC59D880214FA /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BFBECBBD9204DDFF8AB0D8E /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		18AA4ECBFC0918810F26906C = {
+			isa = PBXGroup;
+			children = (
+				E07946B611D81AD7BE149F38 /* ClawVox */,
+				C5145D6DB98EF0B90D80FD6D /* Frameworks */,
+				7F472AEF83E29EE7E7A94B2C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45BB8D61EEEED66535225C54 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BF4E0F7D3D96A0D124690ADD /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5743C9F479A0F234EAAB56FC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D462648011DA5C5A7A2465B1 /* ConversationViewModel.swift */,
+				401C4243B9487804C3EDFBC6 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6AAEA6212B7056A64F0E3B2C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7F6CDC10B6688A33620E8B45 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		70F3BAEC54DF37251F423050 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				9B6B7B21C1C5C831C22E3B5A /* MainWindowView.swift */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
+		7F472AEF83E29EE7E7A94B2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E154345A4EC9BAB7C455ECD5 /* ClawVox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF8286E32A36E652919712A1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */,
+				A1E0BB373E6AE73AB887AC06 /* ClawVoxApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C5145D6DB98EF0B90D80FD6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E08189A2080983FD0D73A09 /* AVFoundation.framework */,
+				F5BBBC98022D96724024A5D4 /* Speech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6A9EE94B68F24D9B98CB090 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FE5BDD80495E74869075914D /* OrbView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E07946B611D81AD7BE149F38 /* ClawVox */ = {
+			isa = PBXGroup;
+			children = (
+				BF8286E32A36E652919712A1 /* App */,
+				EB13596760DCB1F63B09BE03 /* Models */,
+				EE7173DBEEDE91BC8A91BA61 /* Networking */,
+				F346B6E5ADC19413CCB1EB1F /* Services */,
+				E4E05D6C89875760500957B5 /* Utilities */,
+				5743C9F479A0F234EAAB56FC /* ViewModels */,
+				EA887049724C9EA50CF5AA7D /* Views */,
+				4A19C4B2ED3EE943556A8E74 /* ClawVox.entitlements */,
+				E16A6A338FC3B040751B1C4A /* Info.plist */,
+			);
+			path = ClawVox;
+			sourceTree = "<group>";
+		};
+		E4E05D6C89875760500957B5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A0210F7CC29A183A1C37BAED /* Constants.swift */,
+				8DF3974396A13917ABCE7AB6 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EA887049724C9EA50CF5AA7D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70F3BAEC54DF37251F423050 /* MainWindow */,
+				0BFBECBBD9204DDFF8AB0D8E /* MenuBar */,
+				45BB8D61EEEED66535225C54 /* Onboarding */,
+				6AAEA6212B7056A64F0E3B2C /* Settings */,
+				D6A9EE94B68F24D9B98CB090 /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EB13596760DCB1F63B09BE03 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA944012932658BF2F02FD76 /* AppSettings.swift */,
+				A67D59BDE3888787FF2B1121 /* ConnectionState.swift */,
+				CF2E344BA8C1CC082CC89496 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE7173DBEEDE91BC8A91BA61 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				88824150F8442EDDFC426503 /* OpenClawClient.swift */,
+				80A9414BCFF7AC3D01ED8307 /* WebSocketClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F346B6E5ADC19413CCB1EB1F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B55DDB5FFBA699048914E645 /* KeychainService.swift */,
+				CF1830ABA0FAB68E82B36A86 /* SpeechService.swift */,
+				9D1278247ED2653C5381A5EE /* TTSService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		790ADCDDCE4CE649B0E4D585 /* ClawVox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C537FE02DB1BF66D33437A9E /* Build configuration list for PBXNativeTarget "ClawVox" */;
+			buildPhases = (
+				21902CE0AA16F837B94DA675 /* Sources */,
+				83FE345E7F5DEF549E53A0A4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClawVox;
+			packageProductDependencies = (
+			);
+			productName = ClawVox;
+			productReference = E154345A4EC9BAB7C455ECD5 /* ClawVox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68E81EE51A1678F5E0F4622D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 499AF28F152EF8C8434D56F0 /* Build configuration list for PBXProject "ClawVox" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 18AA4ECBFC0918810F26906C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7F472AEF83E29EE7E7A94B2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				790ADCDDCE4CE649B0E4D585 /* ClawVox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21902CE0AA16F837B94DA675 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE1545CE8412A746D5B0FDFA /* AppDelegate.swift in Sources */,
+				41800A1A1E3D6C49E8234AA2 /* AppSettings.swift in Sources */,
+				9C37FD4D430A701705A94BD6 /* ClawVoxApp.swift in Sources */,
+				AE6BC99658C8ECA657EC4A78 /* ConnectionState.swift in Sources */,
+				6EEA4AE973F00BA7AEBB2BE6 /* Constants.swift in Sources */,
+				0038B12C20F32E8306685A99 /* ConversationViewModel.swift in Sources */,
+				EB14A7272B4090B395E5F4A3 /* Extensions.swift in Sources */,
+				AA76FDCA88EF6E534764135B /* KeychainService.swift in Sources */,
+				2AC6C62AAFE12D9B32ECA6D4 /* MainWindowView.swift in Sources */,
+				EB6403BCDB6C8F3E14955BA9 /* MenuBarView.swift in Sources */,
+				5B6A2D6B9F0C8BE91B287036 /* Message.swift in Sources */,
+				5C5B8159E7E5A092A5B1E1A9 /* OnboardingView.swift in Sources */,
+				1B9C115E0A293F9FE3692867 /* OpenClawClient.swift in Sources */,
+				6FE039BB0A46E825ADE409D2 /* OrbView.swift in Sources */,
+				6C51120D4002F6E8442A318D /* SettingsView.swift in Sources */,
+				C8F017012A2DC2376E848823 /* SettingsViewModel.swift in Sources */,
+				50838CEDB981A0CCC2A3B6FA /* SpeechService.swift in Sources */,
+				554FB33ED2CA48BCC53C610E /* TTSService.swift in Sources */,
+				F942D22D359F3A42D00C668F /* WebSocketClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5A1DC031004E49D4E1AB5F97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		837C394469529646E64028E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AC6B318E571AC2D79B066287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClawVox/ClawVox.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ClawVox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clawvox.app;
+				PRODUCT_NAME = ClawVox;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		E99796DA72646F68F6FAE392 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClawVox/ClawVox.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ClawVox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clawvox.app;
+				PRODUCT_NAME = ClawVox;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		499AF28F152EF8C8434D56F0 /* Build configuration list for PBXProject "ClawVox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				837C394469529646E64028E0 /* Debug */,
+				5A1DC031004E49D4E1AB5F97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C537FE02DB1BF66D33437A9E /* Build configuration list for PBXNativeTarget "ClawVox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC6B318E571AC2D79B066287 /* Debug */,
+				E99796DA72646F68F6FAE392 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 68E81EE51A1678F5E0F4622D /* Project object */;
+}

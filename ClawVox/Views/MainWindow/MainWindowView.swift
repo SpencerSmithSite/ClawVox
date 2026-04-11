@@ -5,7 +5,7 @@ struct MainWindowView: View {
         ZStack {
             Color.black.ignoresSafeArea()
 
-            Text("OpenClaw Buddy")
+            Text("ClawVox")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)

@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "838FA2CEE91D646FA7B4443E"
-               BuildableName = "OpenClaw Buddy.app"
-               BlueprintName = "OpenClaw Buddy"
-               ReferencedContainer = "container:OpenClaw Buddy.xcodeproj">
+               BlueprintIdentifier = "790ADCDDCE4CE649B0E4D585"
+               BuildableName = "ClawVox.app"
+               BlueprintName = "ClawVox"
+               ReferencedContainer = "container:ClawVox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "838FA2CEE91D646FA7B4443E"
-            BuildableName = "OpenClaw Buddy.app"
-            BlueprintName = "OpenClaw Buddy"
-            ReferencedContainer = "container:OpenClaw Buddy.xcodeproj">
+            BlueprintIdentifier = "790ADCDDCE4CE649B0E4D585"
+            BuildableName = "ClawVox.app"
+            BlueprintName = "ClawVox"
+            ReferencedContainer = "container:ClawVox.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "838FA2CEE91D646FA7B4443E"
-            BuildableName = "OpenClaw Buddy.app"
-            BlueprintName = "OpenClaw Buddy"
-            ReferencedContainer = "container:OpenClaw Buddy.xcodeproj">
+            BlueprintIdentifier = "790ADCDDCE4CE649B0E4D585"
+            BuildableName = "ClawVox.app"
+            BlueprintName = "ClawVox"
+            ReferencedContainer = "container:ClawVox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "838FA2CEE91D646FA7B4443E"
-            BuildableName = "OpenClaw Buddy.app"
-            BlueprintName = "OpenClaw Buddy"
-            ReferencedContainer = "container:OpenClaw Buddy.xcodeproj">
+            BlueprintIdentifier = "790ADCDDCE4CE649B0E4D585"
+            BuildableName = "ClawVox.app"
+            BlueprintName = "ClawVox"
+            ReferencedContainer = "container:ClawVox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
