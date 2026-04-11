@@ -1,0 +1,39 @@
+name: OpenClaw Buddy
+options:
+  bundleIdPrefix: com.openclaw
+  deploymentTarget:
+    macOS: "13.0"
+  xcodeVersion: "15"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+targets:
+  OpenClaw Buddy:
+    type: application
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: OpenClawBuddy
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.openclaw.buddy
+        PRODUCT_NAME: OpenClaw Buddy
+        SWIFT_VERSION: 5.9
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_ENTITLEMENTS: OpenClawBuddy/OpenClawBuddy.entitlements
+        INFOPLIST_FILE: OpenClawBuddy/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+    dependencies:
+      - sdk: Speech.framework
+      - sdk: AVFoundation.framework
+
+schemes:
+  OpenClaw Buddy:
+    build:
+      targets:
+        OpenClaw Buddy: all
+    run:
+      config: Debug
+    archive:
+      config: Release

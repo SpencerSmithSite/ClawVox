@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0172AFB0CD9F85B7362101B0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D9784EEBF9370A8A06E2C /* Extensions.swift */; };
+		1249D204DFC613331D631C6C /* OpenClawBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10F8EB08DCA2F3F0ED9D306 /* OpenClawBuddyApp.swift */; };
+		14736CEAD043815DC8852948 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504E997459694906DE76E3D7 /* SpeechService.swift */; };
+		2579B385D9A0110AE1F29018 /* OrbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B383E89301187F0A67D859 /* OrbView.swift */; };
+		2592ECF301759DF4A1D4E3F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D3D7EB51610BFE5153975 /* AppDelegate.swift */; };
+		2A783DF1B3D18AFD40A49147 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5322D75F89203FBC8B43BB2 /* AVFoundation.framework */; };
+		3DAC070548075C6ED1196AC1 /* OpenClawClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A37075C23EE90823316CCE /* OpenClawClient.swift */; };
+		424DD39F2470BB3BC1E2944B /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9719E777BD3FFF7A6622D3 /* MenuBarView.swift */; };
+		4542E7CF64E2F0C943523F8E /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4893BB644D2407CD0EB97B5 /* KeychainService.swift */; };
+		835F4FE2887873EFF4B3B5B6 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A49E107F929265A9BAA80 /* MainWindowView.swift */; };
+		85E1ECB45F40DC81C2935A20 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60DDD4699E3A474C8284C337 /* Speech.framework */; };
+		8D0373D4A39FBF8F6BAFA280 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5385455A0AE1A2D262FE1 /* SettingsViewModel.swift */; };
+		A1AF64551D36B99303E4887E /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA07F3A6C06311F718A6B0 /* ConversationViewModel.swift */; };
+		A50F2BECB947950725862374 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F90774FA5DCEFB8E832B31 /* WebSocketClient.swift */; };
+		A66E75AF7B1FEB9A2438E5C2 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5FDBE525D4614409701A3 /* ConnectionState.swift */; };
+		B06D85D2B22AB583BA407681 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF53D7719F6DF77DE9AFEAD /* OnboardingView.swift */; };
+		B0EECAE64964B6C9D977735A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C640E1D11DE273C8142E93 /* SettingsView.swift */; };
+		B734D60784949FC0921B09A4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE93CFEFAF2E4C41B1BBD06 /* Message.swift */; };
+		BF07E2058C3736163E2DE54A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59547F78B2E8866A44350962 /* Constants.swift */; };
+		E56F3DF8025ACD90DF15DF0A /* TTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128E9E06A7013D373DBB28A5 /* TTSService.swift */; };
+		F476BF312ABB585C16A567CC /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230B77F5B15C27937ED8B9CA /* AppSettings.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06C640E1D11DE273C8142E93 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		06DA07F3A6C06311F718A6B0 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		128E9E06A7013D373DBB28A5 /* TTSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSService.swift; sourceTree = "<group>"; };
+		1B8D3D7EB51610BFE5153975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		230B77F5B15C27937ED8B9CA /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		301A49E107F929265A9BAA80 /* MainWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowView.swift; sourceTree = "<group>"; };
+		504E997459694906DE76E3D7 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		59547F78B2E8866A44350962 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		60DDD4699E3A474C8284C337 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		74B383E89301187F0A67D859 /* OrbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbView.swift; sourceTree = "<group>"; };
+		7CE93CFEFAF2E4C41B1BBD06 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7CF53D7719F6DF77DE9AFEAD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		88E5FDBE525D4614409701A3 /* ConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
+		97306F371FF9ED7E074C2BC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9ACAA66E90718E857E7ADFCA /* OpenClawBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenClawBuddy.entitlements; sourceTree = "<group>"; };
+		A1E2D3D855A3974FFAD5BB26 /* OpenClaw Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenClaw Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A37075C23EE90823316CCE /* OpenClawClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawClient.swift; sourceTree = "<group>"; };
+		A5322D75F89203FBC8B43BB2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A9D5385455A0AE1A2D262FE1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		AF9719E777BD3FFF7A6622D3 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		D10F8EB08DCA2F3F0ED9D306 /* OpenClawBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawBuddyApp.swift; sourceTree = "<group>"; };
+		E9F90774FA5DCEFB8E832B31 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
+		F4893BB644D2407CD0EB97B5 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		F91D9784EEBF9370A8A06E2C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAC35AA76BC2E8F309242AD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85E1ECB45F40DC81C2935A20 /* Speech.framework in Frameworks */,
+				2A783DF1B3D18AFD40A49147 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0604620444E6FF7DCC8C1178 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A2A37075C23EE90823316CCE /* OpenClawClient.swift */,
+				E9F90774FA5DCEFB8E832B31 /* WebSocketClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		08D79F82E2486FA083DA3FCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F4893BB644D2407CD0EB97B5 /* KeychainService.swift */,
+				504E997459694906DE76E3D7 /* SpeechService.swift */,
+				128E9E06A7013D373DBB28A5 /* TTSService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1F0857AA9498382F15E2209F /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				AF9719E777BD3FFF7A6622D3 /* MenuBarView.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		339D476B29716258CC6854C2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				06DA07F3A6C06311F718A6B0 /* ConversationViewModel.swift */,
+				A9D5385455A0AE1A2D262FE1 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		856E5D5D6DD55807EF30C33B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5322D75F89203FBC8B43BB2 /* AVFoundation.framework */,
+				60DDD4699E3A474C8284C337 /* Speech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AF76B27F0FA678184D91045 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				301A49E107F929265A9BAA80 /* MainWindowView.swift */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
+		9B984F07DE100800247AFDF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				230B77F5B15C27937ED8B9CA /* AppSettings.swift */,
+				88E5FDBE525D4614409701A3 /* ConnectionState.swift */,
+				7CE93CFEFAF2E4C41B1BBD06 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A58654CF97BC3FBF8AC3E99C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				06C640E1D11DE273C8142E93 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A6B2141144E3F2C5C298F248 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				59547F78B2E8866A44350962 /* Constants.swift */,
+				F91D9784EEBF9370A8A06E2C /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AE16A6A162C4A9E4D599D705 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				74B383E89301187F0A67D859 /* OrbView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		AF183DBA2060E75B8CA08589 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				7CF53D7719F6DF77DE9AFEAD /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C014035EBDAB811691006D61 = {
+			isa = PBXGroup;
+			children = (
+				D7C3F6957622C546C158739D /* OpenClawBuddy */,
+				856E5D5D6DD55807EF30C33B /* Frameworks */,
+				F9B053EB57A09278E1DA852E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7C3F6957622C546C158739D /* OpenClawBuddy */ = {
+			isa = PBXGroup;
+			children = (
+				E99047A63BB56FEBDDCB238C /* App */,
+				9B984F07DE100800247AFDF7 /* Models */,
+				0604620444E6FF7DCC8C1178 /* Networking */,
+				08D79F82E2486FA083DA3FCC /* Services */,
+				A6B2141144E3F2C5C298F248 /* Utilities */,
+				339D476B29716258CC6854C2 /* ViewModels */,
+				F5C51AD5EFBA13633A481B7E /* Views */,
+				97306F371FF9ED7E074C2BC6 /* Info.plist */,
+				9ACAA66E90718E857E7ADFCA /* OpenClawBuddy.entitlements */,
+			);
+			path = OpenClawBuddy;
+			sourceTree = "<group>";
+		};
+		E99047A63BB56FEBDDCB238C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1B8D3D7EB51610BFE5153975 /* AppDelegate.swift */,
+				D10F8EB08DCA2F3F0ED9D306 /* OpenClawBuddyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F5C51AD5EFBA13633A481B7E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9AF76B27F0FA678184D91045 /* MainWindow */,
+				1F0857AA9498382F15E2209F /* MenuBar */,
+				AF183DBA2060E75B8CA08589 /* Onboarding */,
+				A58654CF97BC3FBF8AC3E99C /* Settings */,
+				AE16A6A162C4A9E4D599D705 /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F9B053EB57A09278E1DA852E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1E2D3D855A3974FFAD5BB26 /* OpenClaw Buddy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		838FA2CEE91D646FA7B4443E /* OpenClaw Buddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EDB878D175BDA9FB74D12F8 /* Build configuration list for PBXNativeTarget "OpenClaw Buddy" */;
+			buildPhases = (
+				9BB66082A260F81EA1217681 /* Sources */,
+				EAC35AA76BC2E8F309242AD8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenClaw Buddy";
+			packageProductDependencies = (
+			);
+			productName = "OpenClaw Buddy";
+			productReference = A1E2D3D855A3974FFAD5BB26 /* OpenClaw Buddy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FA9B6C08E1B191ABB49D16C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 1380A46A985FA85559051F77 /* Build configuration list for PBXProject "OpenClaw Buddy" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C014035EBDAB811691006D61;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F9B053EB57A09278E1DA852E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				838FA2CEE91D646FA7B4443E /* OpenClaw Buddy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BB66082A260F81EA1217681 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2592ECF301759DF4A1D4E3F3 /* AppDelegate.swift in Sources */,
+				F476BF312ABB585C16A567CC /* AppSettings.swift in Sources */,
+				A66E75AF7B1FEB9A2438E5C2 /* ConnectionState.swift in Sources */,
+				BF07E2058C3736163E2DE54A /* Constants.swift in Sources */,
+				A1AF64551D36B99303E4887E /* ConversationViewModel.swift in Sources */,
+				0172AFB0CD9F85B7362101B0 /* Extensions.swift in Sources */,
+				4542E7CF64E2F0C943523F8E /* KeychainService.swift in Sources */,
+				835F4FE2887873EFF4B3B5B6 /* MainWindowView.swift in Sources */,
+				424DD39F2470BB3BC1E2944B /* MenuBarView.swift in Sources */,
+				B734D60784949FC0921B09A4 /* Message.swift in Sources */,
+				B06D85D2B22AB583BA407681 /* OnboardingView.swift in Sources */,
+				1249D204DFC613331D631C6C /* OpenClawBuddyApp.swift in Sources */,
+				3DAC070548075C6ED1196AC1 /* OpenClawClient.swift in Sources */,
+				2579B385D9A0110AE1F29018 /* OrbView.swift in Sources */,
+				B0EECAE64964B6C9D977735A /* SettingsView.swift in Sources */,
+				8D0373D4A39FBF8F6BAFA280 /* SettingsViewModel.swift in Sources */,
+				14736CEAD043815DC8852948 /* SpeechService.swift in Sources */,
+				E56F3DF8025ACD90DF15DF0A /* TTSService.swift in Sources */,
+				A50F2BECB947950725862374 /* WebSocketClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		982AB50A7F4447BC233C3F73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AD83014F49375EC3D5098E6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F448F4BE88B6769ABF6A566E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OpenClawBuddy/OpenClawBuddy.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = OpenClawBuddy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclaw.buddy;
+				PRODUCT_NAME = "OpenClaw Buddy";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		F7FEF11F9C335250B7B1EF55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OpenClawBuddy/OpenClawBuddy.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = OpenClawBuddy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclaw.buddy;
+				PRODUCT_NAME = "OpenClaw Buddy";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1380A46A985FA85559051F77 /* Build configuration list for PBXProject "OpenClaw Buddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				982AB50A7F4447BC233C3F73 /* Debug */,
+				AD83014F49375EC3D5098E6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7EDB878D175BDA9FB74D12F8 /* Build configuration list for PBXNativeTarget "OpenClaw Buddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7FEF11F9C335250B7B1EF55 /* Debug */,
+				F448F4BE88B6769ABF6A566E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FA9B6C08E1B191ABB49D16C /* Project object */;
+}
