@@ -23,12 +23,23 @@
 		9C37FD4D430A701705A94BD6 /* ClawVoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E0BB373E6AE73AB887AC06 /* ClawVoxApp.swift */; };
 		AA76FDCA88EF6E534764135B /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DDB5FFBA699048914E645 /* KeychainService.swift */; };
 		AE6BC99658C8ECA657EC4A78 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67D59BDE3888787FF2B1121 /* ConnectionState.swift */; };
+		B4417A7BA85B9FE1996C8E96 /* OpenClawClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F7905E4C1DFC0EE7484D7 /* OpenClawClientTests.swift */; };
 		C8F017012A2DC2376E848823 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C4243B9487804C3EDFBC6 /* SettingsViewModel.swift */; };
 		EB14A7272B4090B395E5F4A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3974396A13917ABCE7AB6 /* Extensions.swift */; };
 		EB6403BCDB6C8F3E14955BA9 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */; };
 		EE1545CE8412A746D5B0FDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */; };
 		F942D22D359F3A42D00C668F /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A9414BCFF7AC3D01ED8307 /* WebSocketClient.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3703BAEBED803DDC0D4962F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68E81EE51A1678F5E0F4622D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 790ADCDDCE4CE649B0E4D585;
+			remoteInfo = ClawVox;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3E08189A2080983FD0D73A09 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -39,6 +50,7 @@
 		88824150F8442EDDFC426503 /* OpenClawClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawClient.swift; sourceTree = "<group>"; };
 		8DF3974396A13917ABCE7AB6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9B6B7B21C1C5C831C22E3B5A /* MainWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowView.swift; sourceTree = "<group>"; };
+		9C4F7905E4C1DFC0EE7484D7 /* OpenClawClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawClientTests.swift; sourceTree = "<group>"; };
 		9D1278247ED2653C5381A5EE /* TTSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSService.swift; sourceTree = "<group>"; };
 		A0210F7CC29A183A1C37BAED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1E0BB373E6AE73AB887AC06 /* ClawVoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClawVoxApp.swift; sourceTree = "<group>"; };
@@ -52,6 +64,7 @@
 		D462648011DA5C5A7A2465B1 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		E154345A4EC9BAB7C455ECD5 /* ClawVox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClawVox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16A6A338FC3B040751B1C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EA0E2D2FBED253DB003B2E2B /* ClawVoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClawVoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5BBBC98022D96724024A5D4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		FE5BDD80495E74869075914D /* OrbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbView.swift; sourceTree = "<group>"; };
@@ -82,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E07946B611D81AD7BE149F38 /* ClawVox */,
+				F3D83948A424FB3D02629490 /* ClawVoxTests */,
 				C5145D6DB98EF0B90D80FD6D /* Frameworks */,
 				7F472AEF83E29EE7E7A94B2C /* Products */,
 			);
@@ -124,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				E154345A4EC9BAB7C455ECD5 /* ClawVox.app */,
+				EA0E2D2FBED253DB003B2E2B /* ClawVoxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,9 +235,35 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		F3D83948A424FB3D02629490 /* ClawVoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C4F7905E4C1DFC0EE7484D7 /* OpenClawClientTests.swift */,
+			);
+			path = ClawVoxTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		03B53C4D689E4C85270D20F5 /* ClawVoxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98BCC6607538C76CB581FA27 /* Build configuration list for PBXNativeTarget "ClawVoxTests" */;
+			buildPhases = (
+				09B901F385AC694CCEA9D5D0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E1859ACCD4F45ADF4D3771C /* PBXTargetDependency */,
+			);
+			name = ClawVoxTests;
+			packageProductDependencies = (
+			);
+			productName = ClawVoxTests;
+			productReference = EA0E2D2FBED253DB003B2E2B /* ClawVoxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		790ADCDDCE4CE649B0E4D585 /* ClawVox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C537FE02DB1BF66D33437A9E /* Build configuration list for PBXNativeTarget "ClawVox" */;
@@ -267,11 +308,20 @@
 			projectRoot = "";
 			targets = (
 				790ADCDDCE4CE649B0E4D585 /* ClawVox */,
+				03B53C4D689E4C85270D20F5 /* ClawVoxTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		09B901F385AC694CCEA9D5D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4417A7BA85B9FE1996C8E96 /* OpenClawClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		21902CE0AA16F837B94DA675 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,7 +350,34 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8E1859ACCD4F45ADF4D3771C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 790ADCDDCE4CE649B0E4D585 /* ClawVox */;
+			targetProxy = 3703BAEBED803DDC0D4962F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		31F833713CE68008E5A731A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clawvox.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClawVox.app/Contents/MacOS/ClawVox";
+			};
+			name = Release;
+		};
 		5A1DC031004E49D4E1AB5F97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -420,6 +497,25 @@
 			};
 			name = Debug;
 		};
+		869B25747552BFE251EB6E3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clawvox.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClawVox.app/Contents/MacOS/ClawVox";
+			};
+			name = Debug;
+		};
 		AC6B318E571AC2D79B066287 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -470,6 +566,15 @@
 			buildConfigurations = (
 				837C394469529646E64028E0 /* Debug */,
 				5A1DC031004E49D4E1AB5F97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		98BCC6607538C76CB581FA27 /* Build configuration list for PBXNativeTarget "ClawVoxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				869B25747552BFE251EB6E3C /* Debug */,
+				31F833713CE68008E5A731A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

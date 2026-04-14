@@ -28,12 +28,32 @@ targets:
       - sdk: Speech.framework
       - sdk: AVFoundation.framework
 
+  ClawVoxTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: ClawVoxTests
+    dependencies:
+      - target: ClawVox
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.clawvox.tests
+        SWIFT_VERSION: 5.9
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        GENERATE_INFOPLIST_FILE: YES
+
 schemes:
   ClawVox:
     build:
       targets:
         ClawVox: all
+        ClawVoxTests: [test]
     run:
       config: Debug
+    test:
+      config: Debug
+      targets:
+        - ClawVoxTests
     archive:
       config: Release

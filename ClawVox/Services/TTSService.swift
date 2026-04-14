@@ -3,11 +3,16 @@ import AVFoundation
 
 /// Text-to-speech service using Apple's AVSpeechSynthesizer.
 @MainActor
-final class TTSService: ObservableObject {
+final class TTSService: NSObject, ObservableObject {
     @Published var isSpeaking: Bool = false
 
     private let synthesizer = AVSpeechSynthesizer()
     private var selectedVoice: AVSpeechSynthesisVoice?
+
+    override init() {
+        super.init()
+        synthesizer.delegate = self
+    }
 
     func configure(voiceIdentifier: String) {
         selectedVoice = AVSpeechSynthesisVoice(identifier: voiceIdentifier)
@@ -15,7 +20,10 @@ final class TTSService: ObservableObject {
     }
 
     func speak(_ text: String) {
-        // TODO: Build AVSpeechUtterance, set voice, call synthesizer.speak(_:)
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = selectedVoice ?? AVSpeechSynthesisVoice(language: Locale.current.identifier)
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
+        synthesizer.speak(utterance)
         isSpeaking = true
     }
 
@@ -27,5 +35,17 @@ final class TTSService: ObservableObject {
     /// Returns all available macOS TTS voices.
     static func availableVoices() -> [AVSpeechSynthesisVoice] {
         AVSpeechSynthesisVoice.speechVoices()
+    }
+}
+
+extension TTSService: AVSpeechSynthesizerDelegate {
+    nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
+                                       didFinish utterance: AVSpeechUtterance) {
+        Task { @MainActor in self.isSpeaking = false }
+    }
+
+    nonisolated func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer,
+                                       didCancel utterance: AVSpeechUtterance) {
+        Task { @MainActor in self.isSpeaking = false }
     }
 }
