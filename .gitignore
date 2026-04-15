@@ -47,3 +47,14 @@ Podfile.lock
 # Secrets — never commit
 *.env
 secrets.json
+
+# Internal planning docs — not for public repo
+plan.md
+TASKS.md
+PROMPTS_ARCHIVE.md
+
+# Design reference images
+*.jpg
+*.jpeg
+*.png
+!ClawVox/Assets.xcassets/**
