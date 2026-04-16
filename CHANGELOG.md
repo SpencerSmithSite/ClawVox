@@ -3,6 +3,12 @@
 ## Unreleased
 
 ### Added
+- **F-03** `WebSocketClient`: full `URLSessionWebSocketTask`-based implementation with auto-reconnect (exponential backoff, max 8 attempts), 30-second ping loop, `ConnectionState` publishing, and `PassthroughSubject<WSMessage>` for incoming events
+- `WebSocketClientTests`: 3 unit tests covering URL scheme conversion (http→ws, https→wss) and disconnect state — all 6 tests pass
+
+## Previous Unreleased
+
+### Added
 - `KeychainService`: full SecItem implementation for save/retrieve/delete of auth tokens
 - `SettingsViewModel`: load and persist settings across launches (UserDefaults for non-sensitive fields, Keychain for auth token)
 - `TTSService`: implemented `speak()` with `AVSpeechUtterance`; `isSpeaking` tracked via `AVSpeechSynthesizerDelegate`

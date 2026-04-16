@@ -25,6 +25,7 @@
 		AE6BC99658C8ECA657EC4A78 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67D59BDE3888787FF2B1121 /* ConnectionState.swift */; };
 		B4417A7BA85B9FE1996C8E96 /* OpenClawClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F7905E4C1DFC0EE7484D7 /* OpenClawClientTests.swift */; };
 		C8F017012A2DC2376E848823 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C4243B9487804C3EDFBC6 /* SettingsViewModel.swift */; };
+		D4223B07BABDDA102DAF3DBE /* WebSocketClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144E52EFA0584275E421041 /* WebSocketClientTests.swift */; };
 		EB14A7272B4090B395E5F4A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3974396A13917ABCE7AB6 /* Extensions.swift */; };
 		EB6403BCDB6C8F3E14955BA9 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */; };
 		EE1545CE8412A746D5B0FDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 		CF2E344BA8C1CC082CC89496 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		D462648011DA5C5A7A2465B1 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		E144E52EFA0584275E421041 /* WebSocketClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClientTests.swift; sourceTree = "<group>"; };
 		E154345A4EC9BAB7C455ECD5 /* ClawVox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClawVox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16A6A338FC3B040751B1C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EA0E2D2FBED253DB003B2E2B /* ClawVoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClawVoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				9C4F7905E4C1DFC0EE7484D7 /* OpenClawClientTests.swift */,
+				E144E52EFA0584275E421041 /* WebSocketClientTests.swift */,
 			);
 			path = ClawVoxTests;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4417A7BA85B9FE1996C8E96 /* OpenClawClientTests.swift in Sources */,
+				D4223B07BABDDA102DAF3DBE /* WebSocketClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
