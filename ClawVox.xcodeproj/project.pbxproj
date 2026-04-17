@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0038B12C20F32E8306685A99 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462648011DA5C5A7A2465B1 /* ConversationViewModel.swift */; };
+		0D956AC73DE809CE9DC41F45 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC6DC03DCD9B2815E94536 /* ChatBubbleView.swift */; };
 		1B9C115E0A293F9FE3692867 /* OpenClawClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88824150F8442EDDFC426503 /* OpenClawClient.swift */; };
 		2AC6C62AAFE12D9B32ECA6D4 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B7B21C1C5C831C22E3B5A /* MainWindowView.swift */; };
 		3FF27E583F99054D0C3DA29B /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5BBBC98022D96724024A5D4 /* Speech.framework */; };
@@ -66,6 +67,7 @@
 		E144E52EFA0584275E421041 /* WebSocketClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClientTests.swift; sourceTree = "<group>"; };
 		E154345A4EC9BAB7C455ECD5 /* ClawVox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClawVox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16A6A338FC3B040751B1C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E6DC6DC03DCD9B2815E94536 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
 		EA0E2D2FBED253DB003B2E2B /* ClawVoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClawVoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5BBBC98022D96724024A5D4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
@@ -166,6 +168,7 @@
 		D6A9EE94B68F24D9B98CB090 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E6DC6DC03DCD9B2815E94536 /* ChatBubbleView.swift */,
 				FE5BDD80495E74869075914D /* OrbView.swift */,
 			);
 			path = Shared;
@@ -332,6 +335,7 @@
 			files = (
 				EE1545CE8412A746D5B0FDFA /* AppDelegate.swift in Sources */,
 				41800A1A1E3D6C49E8234AA2 /* AppSettings.swift in Sources */,
+				0D956AC73DE809CE9DC41F45 /* ChatBubbleView.swift in Sources */,
 				9C37FD4D430A701705A94BD6 /* ClawVoxApp.swift in Sources */,
 				AE6BC99658C8ECA657EC4A78 /* ConnectionState.swift in Sources */,
 				6EEA4AE973F00BA7AEBB2BE6 /* Constants.swift in Sources */,

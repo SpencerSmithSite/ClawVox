@@ -1,6 +1,6 @@
 import Foundation
 
-struct AppSettings: Codable {
+struct AppSettings: Codable, Equatable {
     var gatewayURL: String = "http://localhost:18789"
     var authToken: String = ""
     var sttProvider: STTProvider = .apple

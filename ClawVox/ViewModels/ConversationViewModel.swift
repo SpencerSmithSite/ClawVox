@@ -13,6 +13,8 @@ final class ConversationViewModel: ObservableObject {
 
     init(settings: AppSettings = AppSettings()) {
         self.client = OpenClawClient(settings: settings)
+        client.$connectionState
+            .assign(to: &$connectionState)
     }
 
     func update(settings: AppSettings) {
@@ -42,7 +44,6 @@ final class ConversationViewModel: ObservableObject {
                     }
                 }
             } catch {
-                // Remove the empty placeholder on failure
                 messages.removeAll { $0.id == placeholderID }
             }
             isLoading = false
