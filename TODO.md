@@ -34,8 +34,8 @@
 
 - [x] **V-01** Apple Speech Recognition — `SpeechService` is stubbed; `requestAuthorization()` and `startListening()` bodies need full implementation (AVAudioEngine + SFSpeechAudioBufferRecognitionRequest)
 - [x] **V-02** AVSpeechSynthesizer TTS with neural voice selection — `TTSService` is functional but not wired to `ConversationViewModel`; no voice-picker UI
-- [ ] **V-03** Audio session management (input/output routing, interruption handling)
-- [ ] **V-04** Voice activity detection (auto start/stop on silence)
+- [x] **V-03** Audio session management (input/output routing, interruption handling)
+- [x] **V-04** Voice activity detection (auto start/stop on silence)
 - [ ] **V-05** Whisper API STT integration (with Keychain key storage)
 - [ ] **V-06** ElevenLabs / OpenAI TTS (streaming audio playback)
 
@@ -87,11 +87,11 @@
 |---|---|---|
 | Phase 0 — Research | 0 / 10 | 10 |
 | Phase 1 — Foundation | 6 / 6 | 0 |
-| Phase 2 — Voice | 2 / 6 | 4 |
+| Phase 2 — Voice | 4 / 6 | 2 |
 | Phase 3 — Polish UI | 0 / 6 | 6 |
 | Phase 4 — Cloud Voice | 0 / 5 | 5 |
 | Phase 5 — Distribution | 0 / 5 | 5 |
 | Phase 6 — Beta | 1 / 4 | 3 |
-| **Total** | **9 / 42** | **33** |
+| **Total** | **11 / 42** | **31** |
 
-**Next recommended task:** V-03 (audio session management — input/output routing, interruption handling) or V-04 (voice activity detection — auto start/stop on silence).
+**Next recommended task:** V-05 (Whisper API STT integration with Keychain key storage) or U-01 (full animated orb — Metal/SpriteKit shader responding to audio levels).

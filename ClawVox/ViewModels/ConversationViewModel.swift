@@ -10,6 +10,8 @@ final class ConversationViewModel: ObservableObject {
     @Published var isListening: Bool = false
     @Published var isSpeaking: Bool = false
     @Published var isTTSEnabled: Bool = true
+    /// Normalised microphone RMS level (0.0 – 1.0), updated while listening.
+    @Published var audioLevel: Float = 0.0
 
     private let client: OpenClawClient
     private let ttsService = TTSService()
@@ -25,6 +27,8 @@ final class ConversationViewModel: ObservableObject {
             .assign(to: &$isListening)
         ttsService.$isSpeaking
             .assign(to: &$isSpeaking)
+        speechService.$audioLevel
+            .assign(to: &$audioLevel)
         speechService.finalTranscript
             .sink { [weak self] text in
                 guard let self else { return }

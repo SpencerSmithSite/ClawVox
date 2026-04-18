@@ -6,7 +6,7 @@ struct MenuBarView: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            OrbView()
+            OrbView(level: Double(conversationVM.audioLevel))
                 .frame(width: 80, height: 80)
 
             Text("ClawVox")
