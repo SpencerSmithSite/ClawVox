@@ -32,6 +32,12 @@ struct MainWindowView: View {
                 .foregroundStyle(.white)
             Spacer()
             connectionBadge
+            Button(action: { conversationVM.isTTSEnabled.toggle() }) {
+                Image(systemName: conversationVM.isTTSEnabled ? "speaker.wave.2.fill" : "speaker.slash")
+                    .foregroundStyle(conversationVM.isTTSEnabled ? Color(hex: "#00CFFF") : .secondary)
+            }
+            .buttonStyle(.plain)
+            .help(conversationVM.isTTSEnabled ? "Mute responses" : "Unmute responses")
             Button {
                 conversationVM.clearConversation()
             } label: {
@@ -130,6 +136,14 @@ struct MainWindowView: View {
 
     private var inputBar: some View {
         HStack(alignment: .bottom, spacing: 10) {
+            Button(action: { conversationVM.toggleMic() }) {
+                Image(systemName: conversationVM.isListening ? "mic.fill" : "mic")
+                    .font(.title2)
+                    .foregroundStyle(conversationVM.isListening ? .red : .secondary)
+            }
+            .buttonStyle(.plain)
+            .help(conversationVM.isListening ? "Stop listening" : "Start voice input")
+
             TextField("Message…", text: $conversationVM.inputText, axis: .vertical)
                 .textFieldStyle(.plain)
                 .font(.body)

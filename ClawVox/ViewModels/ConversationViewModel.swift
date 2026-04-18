@@ -7,18 +7,41 @@ final class ConversationViewModel: ObservableObject {
     @Published var inputText: String = ""
     @Published var connectionState: ConnectionState = .disconnected
     @Published var isLoading: Bool = false
+    @Published var isListening: Bool = false
+    @Published var isSpeaking: Bool = false
+    @Published var isTTSEnabled: Bool = true
 
     private let client: OpenClawClient
+    private let ttsService = TTSService()
+    private let speechService = SpeechService()
     private var streamTask: Task<Void, Never>?
+    private var cancellables = Set<AnyCancellable>()
 
     init(settings: AppSettings = AppSettings()) {
         self.client = OpenClawClient(settings: settings)
         client.$connectionState
             .assign(to: &$connectionState)
+        speechService.$isListening
+            .assign(to: &$isListening)
+        ttsService.$isSpeaking
+            .assign(to: &$isSpeaking)
+        speechService.finalTranscript
+            .sink { [weak self] text in
+                guard let self else { return }
+                self.inputText = text
+                self.sendMessage()
+            }
+            .store(in: &cancellables)
+        if !settings.selectedVoiceIdentifier.isEmpty {
+            ttsService.configure(voiceIdentifier: settings.selectedVoiceIdentifier)
+        }
     }
 
     func update(settings: AppSettings) {
         client.update(settings: settings)
+        if !settings.selectedVoiceIdentifier.isEmpty {
+            ttsService.configure(voiceIdentifier: settings.selectedVoiceIdentifier)
+        }
     }
 
     func sendMessage() {
@@ -47,6 +70,9 @@ final class ConversationViewModel: ObservableObject {
                 messages.removeAll { $0.id == placeholderID }
             }
             isLoading = false
+            if isTTSEnabled && !assistantContent.isEmpty {
+                ttsService.speak(assistantContent)
+            }
         }
     }
 
@@ -58,6 +84,19 @@ final class ConversationViewModel: ObservableObject {
 
     func clearConversation() {
         cancelStream()
+        ttsService.stop()
         messages.removeAll()
+    }
+
+    func toggleMic() {
+        if speechService.isListening {
+            speechService.stopListening()
+        } else {
+            Task {
+                let authorized = await speechService.requestAuthorization()
+                guard authorized else { return }
+                speechService.startListening()
+            }
+        }
     }
 }
