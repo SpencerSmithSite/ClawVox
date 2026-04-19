@@ -15,6 +15,7 @@ final class ConversationViewModel: ObservableObject {
 
     private let client: OpenClawClient
     private let ttsService = TTSService()
+    private let openAITTSService = OpenAITTSService()
     private let speechService = SpeechService()
     private let whisperService = WhisperSTTService()
     private var streamTask: Task<Void, Never>?
@@ -27,7 +28,10 @@ final class ConversationViewModel: ObservableObject {
 
         client.$connectionState
             .assign(to: &$connectionState)
-        ttsService.$isSpeaking
+
+        // isSpeaking is true when either TTS service is active.
+        Publishers.CombineLatest(ttsService.$isSpeaking, openAITTSService.$isSpeaking)
+            .map { $0 || $1 }
             .assign(to: &$isSpeaking)
 
         // Merge isListening from both STT services — only one is active at a time.
@@ -95,7 +99,14 @@ final class ConversationViewModel: ObservableObject {
             }
             isLoading = false
             if isTTSEnabled && !assistantContent.isEmpty {
-                ttsService.speak(assistantContent)
+                switch currentSettings.ttsProvider {
+                case .apple:
+                    ttsService.speak(assistantContent)
+                case .openai:
+                    openAITTSService.speak(assistantContent)
+                case .elevenlabs:
+                    ttsService.speak(assistantContent)
+                }
             }
         }
     }
@@ -109,6 +120,7 @@ final class ConversationViewModel: ObservableObject {
     func clearConversation() {
         cancelStream()
         ttsService.stop()
+        openAITTSService.stop()
         messages.removeAll()
     }
 
@@ -144,6 +156,7 @@ final class ConversationViewModel: ObservableObject {
         if !settings.selectedVoiceIdentifier.isEmpty {
             ttsService.configure(voiceIdentifier: settings.selectedVoiceIdentifier)
         }
-        whisperService.configure(apiKey: settings.whisperAPIKey)
+        whisperService.configure(apiKey: settings.openAIAPIKey)
+        openAITTSService.configure(apiKey: settings.openAIAPIKey, voice: settings.openAITTSVoice)
     }
 }

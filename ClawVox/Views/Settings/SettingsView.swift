@@ -20,7 +20,7 @@ struct SettingsView: View {
                     }
                 }
                 if settingsVM.settings.sttProvider == .whisper {
-                    SecureField("OpenAI API Key", text: $settingsVM.settings.whisperAPIKey)
+                    SecureField("OpenAI API Key", text: $settingsVM.settings.openAIAPIKey)
                         .textFieldStyle(.roundedBorder)
                 }
             }
@@ -29,6 +29,17 @@ struct SettingsView: View {
                 Picker("TTS Provider", selection: $settingsVM.settings.ttsProvider) {
                     ForEach(AppSettings.TTSProvider.allCases, id: \.self) { provider in
                         Text(provider.rawValue).tag(provider)
+                    }
+                }
+                if settingsVM.settings.ttsProvider == .openai {
+                    if settingsVM.settings.sttProvider != .whisper {
+                        SecureField("OpenAI API Key", text: $settingsVM.settings.openAIAPIKey)
+                            .textFieldStyle(.roundedBorder)
+                    }
+                    Picker("Voice", selection: $settingsVM.settings.openAITTSVoice) {
+                        ForEach(AppSettings.openAIVoices, id: \.self) { voice in
+                            Text(voice.capitalized).tag(voice)
+                        }
                     }
                 }
             }

@@ -12,9 +12,12 @@ final class SettingsViewModel: ObservableObject {
         static let selectedVoiceIdentifier = "selectedVoiceIdentifier"
         static let hotkey = "hotkey"
         static let orbColor = "orbColor"
+        static let openAITTSVoice = "openAITTSVoice"
     }
-    private static let authTokenKeychainKey = "authToken"
-    private static let whisperAPIKeyKeychainKey = "whisperAPIKey"
+    private static let authTokenKeychainKey    = "authToken"
+    private static let openAIAPIKeyKeychainKey = "openAIAPIKey"
+    /// Legacy Keychain key from V-05; read once during migration, then deleted.
+    private static let legacyWhisperKeyKeychainKey = "whisperAPIKey"
 
     init() {
         load()
@@ -29,6 +32,7 @@ final class SettingsViewModel: ObservableObject {
         defaults.set(s.selectedVoiceIdentifier, forKey: UserDefaultsKeys.selectedVoiceIdentifier)
         defaults.set(s.hotkey, forKey: UserDefaultsKeys.hotkey)
         defaults.set(s.orbColor, forKey: UserDefaultsKeys.orbColor)
+        defaults.set(s.openAITTSVoice, forKey: UserDefaultsKeys.openAITTSVoice)
 
         if s.authToken.isEmpty {
             try? KeychainService.delete(forKey: Self.authTokenKeychainKey)
@@ -36,10 +40,10 @@ final class SettingsViewModel: ObservableObject {
             try? KeychainService.save(s.authToken, forKey: Self.authTokenKeychainKey)
         }
 
-        if s.whisperAPIKey.isEmpty {
-            try? KeychainService.delete(forKey: Self.whisperAPIKeyKeychainKey)
+        if s.openAIAPIKey.isEmpty {
+            try? KeychainService.delete(forKey: Self.openAIAPIKeyKeychainKey)
         } else {
-            try? KeychainService.save(s.whisperAPIKey, forKey: Self.whisperAPIKeyKeychainKey)
+            try? KeychainService.save(s.openAIAPIKey, forKey: Self.openAIAPIKeyKeychainKey)
         }
     }
 
@@ -74,8 +78,21 @@ final class SettingsViewModel: ObservableObject {
         if let color = defaults.string(forKey: UserDefaultsKeys.orbColor) {
             s.orbColor = color
         }
+        if let voice = defaults.string(forKey: UserDefaultsKeys.openAITTSVoice) {
+            s.openAITTSVoice = voice
+        }
+
         s.authToken = (try? KeychainService.retrieve(forKey: Self.authTokenKeychainKey)) ?? ""
-        s.whisperAPIKey = (try? KeychainService.retrieve(forKey: Self.whisperAPIKeyKeychainKey)) ?? ""
+
+        // Load OpenAI API key; migrate from legacy "whisperAPIKey" if present.
+        if let key = try? KeychainService.retrieve(forKey: Self.openAIAPIKeyKeychainKey), !key.isEmpty {
+            s.openAIAPIKey = key
+        } else if let legacy = try? KeychainService.retrieve(forKey: Self.legacyWhisperKeyKeychainKey),
+                  !legacy.isEmpty {
+            s.openAIAPIKey = legacy
+            try? KeychainService.save(legacy, forKey: Self.openAIAPIKeyKeychainKey)
+            try? KeychainService.delete(forKey: Self.legacyWhisperKeyKeychainKey)
+        }
 
         settings = s
     }

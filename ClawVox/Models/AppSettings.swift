@@ -8,8 +8,11 @@ struct AppSettings: Codable, Equatable {
     var selectedVoiceIdentifier: String = ""
     var hotkey: String = ""
     var orbColor: String = "#00CFFF"
-    /// OpenAI API key for Whisper STT — stored in Keychain, not UserDefaults.
-    var whisperAPIKey: String = ""
+    /// Shared OpenAI API key — used for Whisper STT and OpenAI TTS.
+    /// Stored in Keychain, never in UserDefaults.
+    var openAIAPIKey: String = ""
+    /// Voice identifier for OpenAI TTS (alloy, echo, fable, onyx, nova, shimmer).
+    var openAITTSVoice: String = "alloy"
 
     enum STTProvider: String, Codable, CaseIterable {
         case apple = "Apple Speech (Local)"
@@ -21,4 +24,7 @@ struct AppSettings: Codable, Equatable {
         case elevenlabs = "ElevenLabs"
         case openai = "OpenAI TTS"
     }
+
+    /// All available voices for the OpenAI TTS API.
+    static let openAIVoices = ["alloy", "echo", "fable", "onyx", "nova", "shimmer"]
 }

@@ -37,7 +37,7 @@
 - [x] **V-03** Audio session management (input/output routing, interruption handling)
 - [x] **V-04** Voice activity detection (auto start/stop on silence)
 - [x] **V-05** Whisper API STT integration (with Keychain key storage)
-- [ ] **V-06** ElevenLabs / OpenAI TTS (streaming audio playback)
+- [x] **V-06** OpenAI TTS (full audio download + `AVAudioPlayer` playback; voice picker in Settings)
 
 ---
 
@@ -87,11 +87,11 @@
 |---|---|---|
 | Phase 0 — Research | 0 / 10 | 10 |
 | Phase 1 — Foundation | 6 / 6 | 0 |
-| Phase 2 — Voice | 5 / 6 | 1 |
+| Phase 2 — Voice | 6 / 6 | 0 |
 | Phase 3 — Polish UI | 0 / 6 | 6 |
 | Phase 4 — Cloud Voice | 0 / 5 | 5 |
 | Phase 5 — Distribution | 0 / 5 | 5 |
 | Phase 6 — Beta | 1 / 4 | 3 |
-| **Total** | **12 / 42** | **30** |
+| **Total** | **13 / 42** | **29** |
 
-**Next recommended task:** V-06 (ElevenLabs / OpenAI streaming TTS) or U-01 (full animated orb — Metal/SpriteKit shader responding to audio levels).
+**Next recommended task:** U-01 (animated orb visualizer responding to audio levels) or U-02 (streaming token-by-token typewriter display).

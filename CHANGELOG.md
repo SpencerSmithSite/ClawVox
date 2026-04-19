@@ -3,6 +3,12 @@
 ## Unreleased
 
 ### Added
+- **V-06** `OpenAITTSService`: calls `/v1/audio/speech` (tts-1 model), downloads full MP3 response, plays back via `AVAudioPlayer`; `isSpeaking` tracked via `AVAudioPlayerDelegate`
+- `AppSettings`: replaced `whisperAPIKey` with shared `openAIAPIKey` (used by both Whisper STT and OpenAI TTS); added `openAITTSVoice` field; `SettingsViewModel` migrates legacy Keychain key on first launch
+- `ConversationViewModel`: wired `OpenAITTSService`; TTS provider selection routes audio output to Apple TTS or OpenAI TTS at runtime; `openAITTSService.stop()` called on `clearConversation()`
+- `SettingsView`: voice picker for OpenAI TTS (alloy/echo/fable/onyx/nova/shimmer); shared API key field shown for Whisper STT and OpenAI TTS providers
+
+### Previous Unreleased
 - **F-03** `WebSocketClient`: full `URLSessionWebSocketTask`-based implementation with auto-reconnect (exponential backoff, max 8 attempts), 30-second ping loop, `ConnectionState` publishing, and `PassthroughSubject<WSMessage>` for incoming events
 - `WebSocketClientTests`: 3 unit tests covering URL scheme conversion (http→ws, https→wss) and disconnect state — all 6 tests pass
 
