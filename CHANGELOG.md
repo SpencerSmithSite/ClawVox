@@ -3,6 +3,11 @@
 ## Unreleased
 
 ### Added
+- **U-01** `OrbView`: breathing animation via `TimelineView(.animation)` when `isSpeaking` is true (sine-wave, ~2.4 s period); `color` parameter uses the user's `orbColor` setting instead of a hardcoded value; `MainWindowView` passes `isSpeaking` and `orbColor` to both header and empty-state orbs
+
+### Previous Unreleased
+
+#### Added
 - **V-06** `OpenAITTSService`: calls `/v1/audio/speech` (tts-1 model), downloads full MP3 response, plays back via `AVAudioPlayer`; `isSpeaking` tracked via `AVAudioPlayerDelegate`
 - `AppSettings`: replaced `whisperAPIKey` with shared `openAIAPIKey` (used by both Whisper STT and OpenAI TTS); added `openAITTSVoice` field; `SettingsViewModel` migrates legacy Keychain key on first launch
 - `ConversationViewModel`: wired `OpenAITTSService`; TTS provider selection routes audio output to Apple TTS or OpenAI TTS at runtime; `openAITTSService.stop()` called on `clearConversation()`

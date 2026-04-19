@@ -25,8 +25,12 @@ struct MainWindowView: View {
 
     private var headerBar: some View {
         HStack(spacing: 10) {
-            OrbView(level: Double(conversationVM.audioLevel))
-                .frame(width: 28, height: 28)
+            OrbView(
+                level: Double(conversationVM.audioLevel),
+                isSpeaking: conversationVM.isSpeaking,
+                color: Color(hex: settingsVM.settings.orbColor)
+            )
+            .frame(width: 28, height: 28)
             Text("ClawVox")
                 .font(.headline)
                 .foregroundStyle(.white)
@@ -118,8 +122,12 @@ struct MainWindowView: View {
 
     private var emptyState: some View {
         VStack(spacing: 16) {
-            OrbView(level: Double(conversationVM.audioLevel))
-                .frame(width: 80, height: 80)
+            OrbView(
+                level: Double(conversationVM.audioLevel),
+                isSpeaking: conversationVM.isSpeaking,
+                color: Color(hex: settingsVM.settings.orbColor)
+            )
+            .frame(width: 80, height: 80)
             Text("Ask me anything")
                 .font(.title2)
                 .fontWeight(.semibold)

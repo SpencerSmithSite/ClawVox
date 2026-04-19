@@ -43,7 +43,7 @@
 
 ## Phase 3 — Polish UI
 
-- [ ] **U-01** Animated orb visualizer (responds to audio input/output levels)
+- [x] **U-01** Animated orb visualizer (responds to audio input/output levels)
 - [ ] **U-02** Streaming text display (token-by-token typewriter effect)
 - [ ] **U-03** Full settings panel — basic panel exists; missing individual voice identifier picker and advanced options
 - [ ] **U-04** Connection setup wizard (first-run onboarding) — `OnboardingView` is a placeholder only
@@ -88,10 +88,10 @@
 | Phase 0 — Research | 0 / 10 | 10 |
 | Phase 1 — Foundation | 6 / 6 | 0 |
 | Phase 2 — Voice | 6 / 6 | 0 |
-| Phase 3 — Polish UI | 0 / 6 | 6 |
+| Phase 3 — Polish UI | 1 / 6 | 5 |
 | Phase 4 — Cloud Voice | 0 / 5 | 5 |
 | Phase 5 — Distribution | 0 / 5 | 5 |
 | Phase 6 — Beta | 1 / 4 | 3 |
-| **Total** | **13 / 42** | **29** |
+| **Total** | **14 / 42** | **28** |
 
-**Next recommended task:** U-01 (animated orb visualizer responding to audio levels) or U-02 (streaming token-by-token typewriter display).
+**Next recommended task:** U-02 (streaming typewriter display) or U-03 (voice identifier picker in Settings).
