@@ -19,6 +19,10 @@ struct SettingsView: View {
                         Text(provider.rawValue).tag(provider)
                     }
                 }
+                if settingsVM.settings.sttProvider == .whisper {
+                    SecureField("OpenAI API Key", text: $settingsVM.settings.whisperAPIKey)
+                        .textFieldStyle(.roundedBorder)
+                }
             }
 
             Section("Text-to-Speech") {

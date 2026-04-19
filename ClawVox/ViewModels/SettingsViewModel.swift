@@ -14,6 +14,7 @@ final class SettingsViewModel: ObservableObject {
         static let orbColor = "orbColor"
     }
     private static let authTokenKeychainKey = "authToken"
+    private static let whisperAPIKeyKeychainKey = "whisperAPIKey"
 
     init() {
         load()
@@ -33,6 +34,12 @@ final class SettingsViewModel: ObservableObject {
             try? KeychainService.delete(forKey: Self.authTokenKeychainKey)
         } else {
             try? KeychainService.save(s.authToken, forKey: Self.authTokenKeychainKey)
+        }
+
+        if s.whisperAPIKey.isEmpty {
+            try? KeychainService.delete(forKey: Self.whisperAPIKeyKeychainKey)
+        } else {
+            try? KeychainService.save(s.whisperAPIKey, forKey: Self.whisperAPIKeyKeychainKey)
         }
     }
 
@@ -68,6 +75,7 @@ final class SettingsViewModel: ObservableObject {
             s.orbColor = color
         }
         s.authToken = (try? KeychainService.retrieve(forKey: Self.authTokenKeychainKey)) ?? ""
+        s.whisperAPIKey = (try? KeychainService.retrieve(forKey: Self.whisperAPIKeyKeychainKey)) ?? ""
 
         settings = s
     }

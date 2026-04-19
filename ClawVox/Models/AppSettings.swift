@@ -8,6 +8,8 @@ struct AppSettings: Codable, Equatable {
     var selectedVoiceIdentifier: String = ""
     var hotkey: String = ""
     var orbColor: String = "#00CFFF"
+    /// OpenAI API key for Whisper STT — stored in Keychain, not UserDefaults.
+    var whisperAPIKey: String = ""
 
     enum STTProvider: String, Codable, CaseIterable {
         case apple = "Apple Speech (Local)"

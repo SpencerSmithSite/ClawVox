@@ -16,37 +16,57 @@ final class ConversationViewModel: ObservableObject {
     private let client: OpenClawClient
     private let ttsService = TTSService()
     private let speechService = SpeechService()
+    private let whisperService = WhisperSTTService()
     private var streamTask: Task<Void, Never>?
     private var cancellables = Set<AnyCancellable>()
+    private var currentSettings: AppSettings = AppSettings()
 
     init(settings: AppSettings = AppSettings()) {
+        self.currentSettings = settings
         self.client = OpenClawClient(settings: settings)
+
         client.$connectionState
             .assign(to: &$connectionState)
-        speechService.$isListening
-            .assign(to: &$isListening)
         ttsService.$isSpeaking
             .assign(to: &$isSpeaking)
-        speechService.$audioLevel
-            .assign(to: &$audioLevel)
-        speechService.finalTranscript
-            .sink { [weak self] text in
-                guard let self else { return }
-                self.inputText = text
-                self.sendMessage()
-            }
-            .store(in: &cancellables)
-        if !settings.selectedVoiceIdentifier.isEmpty {
-            ttsService.configure(voiceIdentifier: settings.selectedVoiceIdentifier)
+
+        // Merge isListening from both STT services — only one is active at a time.
+        Publishers.Merge(
+            speechService.$isListening,
+            whisperService.$isListening
+        )
+        .assign(to: &$isListening)
+
+        // Merge audioLevel from both STT services.
+        Publishers.Merge(
+            speechService.$audioLevel,
+            whisperService.$audioLevel
+        )
+        .assign(to: &$audioLevel)
+
+        // Route final transcripts from both STT services into sendMessage.
+        let handleTranscript: (String) -> Void = { [weak self] text in
+            guard let self else { return }
+            self.inputText = text
+            self.sendMessage()
         }
+        speechService.finalTranscript
+            .sink(receiveValue: handleTranscript)
+            .store(in: &cancellables)
+        whisperService.finalTranscript
+            .sink(receiveValue: handleTranscript)
+            .store(in: &cancellables)
+
+        applySettings(settings)
     }
 
     func update(settings: AppSettings) {
+        currentSettings = settings
         client.update(settings: settings)
-        if !settings.selectedVoiceIdentifier.isEmpty {
-            ttsService.configure(voiceIdentifier: settings.selectedVoiceIdentifier)
-        }
+        applySettings(settings)
     }
+
+    // MARK: - Messaging
 
     func sendMessage() {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -92,15 +112,38 @@ final class ConversationViewModel: ObservableObject {
         messages.removeAll()
     }
 
+    // MARK: - Voice input
+
     func toggleMic() {
+        // Stop whichever service is currently active.
         if speechService.isListening {
             speechService.stopListening()
-        } else {
+            return
+        }
+        if whisperService.isListening {
+            whisperService.stopListening()
+            return
+        }
+
+        // Start the provider selected in settings.
+        switch currentSettings.sttProvider {
+        case .apple:
             Task {
                 let authorized = await speechService.requestAuthorization()
                 guard authorized else { return }
                 speechService.startListening()
             }
+        case .whisper:
+            whisperService.startListening()
         }
+    }
+
+    // MARK: - Private
+
+    private func applySettings(_ settings: AppSettings) {
+        if !settings.selectedVoiceIdentifier.isEmpty {
+            ttsService.configure(voiceIdentifier: settings.selectedVoiceIdentifier)
+        }
+        whisperService.configure(apiKey: settings.whisperAPIKey)
     }
 }

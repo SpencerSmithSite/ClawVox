@@ -183,18 +183,4 @@ final class SpeechService: ObservableObject {
     }
 }
 
-// MARK: - AVAudioPCMBuffer RMS
-
-extension AVAudioPCMBuffer {
-    /// Root-mean-square amplitude across all frames in channel 0.
-    var rms: Float {
-        guard let channelData = floatChannelData, frameLength > 0 else { return 0 }
-        let channel = channelData[0]
-        let count = Int(frameLength)
-        var sumSquares: Float = 0
-        for i in 0..<count {
-            sumSquares += channel[i] * channel[i]
-        }
-        return sqrt(sumSquares / Float(count))
-    }
-}
+// AVAudioPCMBuffer.rms is defined in Utilities/Extensions.swift

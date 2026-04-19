@@ -26,6 +26,7 @@
 		AE6BC99658C8ECA657EC4A78 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67D59BDE3888787FF2B1121 /* ConnectionState.swift */; };
 		B4417A7BA85B9FE1996C8E96 /* OpenClawClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F7905E4C1DFC0EE7484D7 /* OpenClawClientTests.swift */; };
 		C8F017012A2DC2376E848823 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C4243B9487804C3EDFBC6 /* SettingsViewModel.swift */; };
+		D28E0153D346B25F76ABA344 /* WhisperSTTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECFED01EBC6F57C5EA71C64 /* WhisperSTTService.swift */; };
 		D4223B07BABDDA102DAF3DBE /* WebSocketClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144E52EFA0584275E421041 /* WebSocketClientTests.swift */; };
 		EB14A7272B4090B395E5F4A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3974396A13917ABCE7AB6 /* Extensions.swift */; };
 		EB6403BCDB6C8F3E14955BA9 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */; };
@@ -59,6 +60,7 @@
 		A67D59BDE3888787FF2B1121 /* ConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
 		B55DDB5FFBA699048914E645 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		BA944012932658BF2F02FD76 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		BECFED01EBC6F57C5EA71C64 /* WhisperSTTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperSTTService.swift; sourceTree = "<group>"; };
 		BF4E0F7D3D96A0D124690ADD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		CF1830ABA0FAB68E82B36A86 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		CF2E344BA8C1CC082CC89496 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				B55DDB5FFBA699048914E645 /* KeychainService.swift */,
 				CF1830ABA0FAB68E82B36A86 /* SpeechService.swift */,
 				9D1278247ED2653C5381A5EE /* TTSService.swift */,
+				BECFED01EBC6F57C5EA71C64 /* WhisperSTTService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				50838CEDB981A0CCC2A3B6FA /* SpeechService.swift in Sources */,
 				554FB33ED2CA48BCC53C610E /* TTSService.swift in Sources */,
 				F942D22D359F3A42D00C668F /* WebSocketClient.swift in Sources */,
+				D28E0153D346B25F76ABA344 /* WhisperSTTService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
