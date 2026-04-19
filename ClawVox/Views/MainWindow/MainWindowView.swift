@@ -96,7 +96,10 @@ struct MainWindowView: View {
                         emptyState
                     } else {
                         ForEach(conversationVM.messages) { message in
-                            ChatBubbleView(message: message)
+                            let isStreaming = conversationVM.isLoading
+                                && message.id == conversationVM.messages.last?.id
+                                && message.role == .assistant
+                            ChatBubbleView(message: message, isStreaming: isStreaming)
                                 .id(message.id)
                         }
                     }

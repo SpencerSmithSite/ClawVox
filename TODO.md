@@ -44,7 +44,7 @@
 ## Phase 3 — Polish UI
 
 - [x] **U-01** Animated orb visualizer (responds to audio input/output levels)
-- [ ] **U-02** Streaming text display (token-by-token typewriter effect)
+- [x] **U-02** Streaming text display (token-by-token typewriter effect)
 - [ ] **U-03** Full settings panel — basic panel exists; missing individual voice identifier picker and advanced options
 - [ ] **U-04** Connection setup wizard (first-run onboarding) — `OnboardingView` is a placeholder only
 - [ ] **U-05** Dark theme + glass morphism styling — base dark theme in place; glass morphism not done
@@ -88,10 +88,10 @@
 | Phase 0 — Research | 0 / 10 | 10 |
 | Phase 1 — Foundation | 6 / 6 | 0 |
 | Phase 2 — Voice | 6 / 6 | 0 |
-| Phase 3 — Polish UI | 1 / 6 | 5 |
+| Phase 3 — Polish UI | 2 / 6 | 4 |
 | Phase 4 — Cloud Voice | 0 / 5 | 5 |
 | Phase 5 — Distribution | 0 / 5 | 5 |
 | Phase 6 — Beta | 1 / 4 | 3 |
-| **Total** | **14 / 42** | **28** |
+| **Total** | **15 / 42** | **27** |
 
-**Next recommended task:** U-02 (streaming typewriter display) or U-03 (voice identifier picker in Settings).
+**Next recommended task:** U-03 (Apple voice identifier picker in Settings) or U-04 (first-run onboarding wizard).

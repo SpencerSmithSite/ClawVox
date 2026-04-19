@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Added
+- **U-02** `ChatBubbleView`: blinking block-cursor (`▊`) appended to the last assistant message while `isLoading` is true; driven by `TimelineView(.periodic(from:by:))` at 0.6 s per blink; `MainWindowView` identifies the streaming message by matching `messages.last?.id` under `isLoading`
 - **U-01** `OrbView`: breathing animation via `TimelineView(.animation)` when `isSpeaking` is true (sine-wave, ~2.4 s period); `color` parameter uses the user's `orbColor` setting instead of a hardcoded value; `MainWindowView` passes `isSpeaking` and `orbColor` to both header and empty-state orbs
 
 ### Previous Unreleased
