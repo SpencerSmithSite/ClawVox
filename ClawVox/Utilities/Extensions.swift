@@ -38,6 +38,23 @@ extension Date {
     }
 }
 
+// MARK: - View extensions
+
+extension View {
+    /// Dark glass-morphism card: system material blur + hairline border.
+    func glassCard(cornerRadius: CGFloat = 16) -> some View {
+        self
+            .background(
+                .ultraThinMaterial,
+                in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                    .stroke(Color.white.opacity(0.1), lineWidth: 0.5)
+            )
+    }
+}
+
 // MARK: - String extensions
 
 extension String {

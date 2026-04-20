@@ -62,7 +62,10 @@ struct MainWindowView: View {
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
-        .background(Color(hex: "#0D0D0D"))
+        .background(.ultraThinMaterial)
+        .overlay(alignment: .bottom) {
+            Color.white.opacity(0.06).frame(height: 0.5)
+        }
     }
 
     private var connectionBadge: some View {
@@ -170,8 +173,7 @@ struct MainWindowView: View {
                 .lineLimit(1...6)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .background(Color(hex: "#1A1A1A"))
-                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .glassCard(cornerRadius: 12)
                 .onSubmit {
                     conversationVM.sendMessage()
                 }
@@ -198,7 +200,10 @@ struct MainWindowView: View {
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 10)
-        .background(Color(hex: "#0D0D0D"))
+        .background(.ultraThinMaterial)
+        .overlay(alignment: .top) {
+            Color.white.opacity(0.06).frame(height: 0.5)
+        }
     }
 }
 

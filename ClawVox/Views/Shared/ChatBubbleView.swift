@@ -33,15 +33,27 @@ struct ChatBubbleView: View {
         }
     }
 
+    @ViewBuilder
     private func staticBubble(text: String) -> some View {
-        Text(text)
-            .font(.body)
-            .foregroundStyle(isUser ? Color.black : Color.white)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .background(isUser ? Color(hex: "#00CFFF") : Color(hex: "#1E1E1E"))
-            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-            .textSelection(.enabled)
+        if isUser {
+            Text(text)
+                .font(.body)
+                .foregroundStyle(Color.black)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background(Color(hex: "#00CFFF"))
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .shadow(color: Color(hex: "#00CFFF").opacity(0.35), radius: 12, x: 0, y: 4)
+                .textSelection(.enabled)
+        } else {
+            Text(text)
+                .font(.body)
+                .foregroundStyle(Color.white)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .glassCard(cornerRadius: 16)
+                .textSelection(.enabled)
+        }
     }
 }
 
