@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### Added
+- **U-04** First-run onboarding wizard: 4-step flow (Welcome → Connect → Voice → Done) shown in `MainWindowView` until `hasCompletedOnboarding` is set; Connect step includes async `/health` test with success/failure feedback; Voice step surfaces STT/TTS provider pickers and OpenAI key field; `SettingsViewModel` gains `hasCompletedOnboarding` (UserDefaults) and `completeOnboarding()` which saves settings and flips the flag
 - **U-03** `SettingsView`: Apple TTS voice picker — lists voices filtered to the user's locale, labelled with quality indicators (★ enhanced, ★★ premium); bound to `AppSettings.selectedVoiceIdentifier` which is already wired through `ConversationViewModel.applySettings()` → `TTSService.configure()`
 
 ### Previous Unreleased

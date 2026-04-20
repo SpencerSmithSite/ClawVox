@@ -19,7 +19,10 @@ final class SettingsViewModel: ObservableObject {
     /// Legacy Keychain key from V-05; read once during migration, then deleted.
     private static let legacyWhisperKeyKeychainKey = "whisperAPIKey"
 
+    @Published var hasCompletedOnboarding: Bool = false
+
     init() {
+        hasCompletedOnboarding = UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
         load()
     }
 
@@ -45,6 +48,12 @@ final class SettingsViewModel: ObservableObject {
         } else {
             try? KeychainService.save(s.openAIAPIKey, forKey: Self.openAIAPIKeyKeychainKey)
         }
+    }
+
+    func completeOnboarding() {
+        save()
+        hasCompletedOnboarding = true
+        UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
     }
 
     func resetToDefaults() {

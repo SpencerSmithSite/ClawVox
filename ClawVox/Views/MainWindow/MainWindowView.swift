@@ -5,6 +5,14 @@ struct MainWindowView: View {
     @EnvironmentObject private var conversationVM: ConversationViewModel
 
     var body: some View {
+        if !settingsVM.hasCompletedOnboarding {
+            OnboardingView()
+        } else {
+        mainContent
+        }
+    }
+
+    private var mainContent: some View {
         VStack(spacing: 0) {
             headerBar
             Divider().overlay(Color(hex: "#222222"))
