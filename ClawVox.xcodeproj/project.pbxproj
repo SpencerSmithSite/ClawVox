@@ -10,6 +10,7 @@
 		0038B12C20F32E8306685A99 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D462648011DA5C5A7A2465B1 /* ConversationViewModel.swift */; };
 		0D956AC73DE809CE9DC41F45 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC6DC03DCD9B2815E94536 /* ChatBubbleView.swift */; };
 		1B9C115E0A293F9FE3692867 /* OpenClawClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88824150F8442EDDFC426503 /* OpenClawClient.swift */; };
+		1CAE0871289FFA281508E15B /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C2D95DD12B07984F27692 /* Conversation.swift */; };
 		2AC6C62AAFE12D9B32ECA6D4 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B7B21C1C5C831C22E3B5A /* MainWindowView.swift */; };
 		3FF27E583F99054D0C3DA29B /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5BBBC98022D96724024A5D4 /* Speech.framework */; };
 		41800A1A1E3D6C49E8234AA2 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA944012932658BF2F02FD76 /* AppSettings.swift */; };
@@ -17,6 +18,7 @@
 		554FB33ED2CA48BCC53C610E /* TTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1278247ED2653C5381A5EE /* TTSService.swift */; };
 		5B6A2D6B9F0C8BE91B287036 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E344BA8C1CC082CC89496 /* Message.swift */; };
 		5C5B8159E7E5A092A5B1E1A9 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4E0F7D3D96A0D124690ADD /* OnboardingView.swift */; };
+		615DDF2B7CD4F4773735EA3A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADC0E194C05A90B52F3D0D /* HistoryView.swift */; };
 		6BDB207F8D5BC59D880214FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E08189A2080983FD0D73A09 /* AVFoundation.framework */; };
 		6C51120D4002F6E8442A318D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6CDC10B6688A33620E8B45 /* SettingsView.swift */; };
 		6EEA4AE973F00BA7AEBB2BE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0210F7CC29A183A1C37BAED /* Constants.swift */; };
@@ -33,6 +35,7 @@
 		EB6403BCDB6C8F3E14955BA9 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */; };
 		EE1545CE8412A746D5B0FDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */; };
 		F942D22D359F3A42D00C668F /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A9414BCFF7AC3D01ED8307 /* WebSocketClient.swift */; };
+		F9524C833203AFF56F2DA6CA /* ConversationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F07C25C9D3AF92021D42A50 /* ConversationStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		303C2D95DD12B07984F27692 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		35ADC0E194C05A90B52F3D0D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		3E08189A2080983FD0D73A09 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		401C4243B9487804C3EDFBC6 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4A19C4B2ED3EE943556A8E74 /* ClawVox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClawVox.entitlements; sourceTree = "<group>"; };
+		6F07C25C9D3AF92021D42A50 /* ConversationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationStore.swift; sourceTree = "<group>"; };
 		7F6CDC10B6688A33620E8B45 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		80A9414BCFF7AC3D01ED8307 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 		88824150F8442EDDFC426503 /* OpenClawClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawClient.swift; sourceTree = "<group>"; };
@@ -107,6 +113,14 @@
 				C5145D6DB98EF0B90D80FD6D /* Frameworks */,
 				7F472AEF83E29EE7E7A94B2C /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		313B780D2871E3727571CEC1 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				35ADC0E194C05A90B52F3D0D /* HistoryView.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		45BB8D61EEEED66535225C54 /* Onboarding */ = {
@@ -206,6 +220,7 @@
 		EA887049724C9EA50CF5AA7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				313B780D2871E3727571CEC1 /* History */,
 				70F3BAEC54DF37251F423050 /* MainWindow */,
 				0BFBECBBD9204DDFF8AB0D8E /* MenuBar */,
 				45BB8D61EEEED66535225C54 /* Onboarding */,
@@ -220,6 +235,7 @@
 			children = (
 				BA944012932658BF2F02FD76 /* AppSettings.swift */,
 				A67D59BDE3888787FF2B1121 /* ConnectionState.swift */,
+				303C2D95DD12B07984F27692 /* Conversation.swift */,
 				CF2E344BA8C1CC082CC89496 /* Message.swift */,
 			);
 			path = Models;
@@ -237,6 +253,7 @@
 		F346B6E5ADC19413CCB1EB1F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6F07C25C9D3AF92021D42A50 /* ConversationStore.swift */,
 				B55DDB5FFBA699048914E645 /* KeychainService.swift */,
 				8893EC0F8E0B9EFFF64E8095 /* OpenAITTSService.swift */,
 				CF1830ABA0FAB68E82B36A86 /* SpeechService.swift */,
@@ -345,8 +362,11 @@
 				9C37FD4D430A701705A94BD6 /* ClawVoxApp.swift in Sources */,
 				AE6BC99658C8ECA657EC4A78 /* ConnectionState.swift in Sources */,
 				6EEA4AE973F00BA7AEBB2BE6 /* Constants.swift in Sources */,
+				1CAE0871289FFA281508E15B /* Conversation.swift in Sources */,
+				F9524C833203AFF56F2DA6CA /* ConversationStore.swift in Sources */,
 				0038B12C20F32E8306685A99 /* ConversationViewModel.swift in Sources */,
 				EB14A7272B4090B395E5F4A3 /* Extensions.swift in Sources */,
+				615DDF2B7CD4F4773735EA3A /* HistoryView.swift in Sources */,
 				AA76FDCA88EF6E534764135B /* KeychainService.swift in Sources */,
 				2AC6C62AAFE12D9B32ECA6D4 /* MainWindowView.swift in Sources */,
 				EB6403BCDB6C8F3E14955BA9 /* MenuBarView.swift in Sources */,

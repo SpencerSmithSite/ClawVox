@@ -3,6 +3,7 @@ import SwiftUI
 struct MainWindowView: View {
     @EnvironmentObject private var settingsVM: SettingsViewModel
     @EnvironmentObject private var conversationVM: ConversationViewModel
+    @State private var showHistory = false
 
     var body: some View {
         if !settingsVM.hasCompletedOnboarding {
@@ -27,6 +28,9 @@ struct MainWindowView: View {
         .onChange(of: settingsVM.settings) { newSettings in
             conversationVM.update(settings: newSettings)
         }
+        .sheet(isPresented: $showHistory) {
+            HistoryView()
+        }
     }
 
     // MARK: - Header
@@ -50,6 +54,12 @@ struct MainWindowView: View {
             }
             .buttonStyle(.plain)
             .help(conversationVM.isTTSEnabled ? "Mute responses" : "Unmute responses")
+            Button { showHistory = true } label: {
+                Image(systemName: "clock")
+                    .foregroundStyle(.secondary)
+            }
+            .buttonStyle(.plain)
+            .help("Conversation history")
             Button {
                 conversationVM.clearConversation()
             } label: {

@@ -13,6 +13,8 @@ final class ConversationViewModel: ObservableObject {
     /// Normalised microphone RMS level (0.0 – 1.0), updated while listening.
     @Published var audioLevel: Float = 0.0
 
+    @Published var savedConversations: [Conversation] = []
+
     private let client: OpenClawClient
     private let ttsService = TTSService()
     private let openAITTSService = OpenAITTSService()
@@ -21,10 +23,14 @@ final class ConversationViewModel: ObservableObject {
     private var streamTask: Task<Void, Never>?
     private var cancellables = Set<AnyCancellable>()
     private var currentSettings: AppSettings = AppSettings()
+    private let store = ConversationStore()
+    private var currentConversationID = UUID()
+    private var conversationStartedAt = Date.now
 
     init(settings: AppSettings = AppSettings()) {
         self.currentSettings = settings
         self.client = OpenClawClient(settings: settings)
+        savedConversations = store.conversations
 
         client.$connectionState
             .assign(to: &$connectionState)
@@ -121,7 +127,42 @@ final class ConversationViewModel: ObservableObject {
         cancelStream()
         ttsService.stop()
         openAITTSService.stop()
+        saveCurrentConversationIfNeeded()
         messages.removeAll()
+        currentConversationID = UUID()
+        conversationStartedAt = .now
+    }
+
+    func loadConversation(_ conversation: Conversation) {
+        cancelStream()
+        ttsService.stop()
+        openAITTSService.stop()
+        saveCurrentConversationIfNeeded()
+        messages = conversation.messages
+        currentConversationID = conversation.id
+        conversationStartedAt = conversation.startedAt
+    }
+
+    func deleteConversation(_ conversation: Conversation) {
+        store.delete(conversation)
+        savedConversations = store.conversations
+    }
+
+    func deleteAllConversations() {
+        store.deleteAll()
+        savedConversations = []
+    }
+
+    private func saveCurrentConversationIfNeeded() {
+        guard !messages.isEmpty else { return }
+        let convo = Conversation(
+            id: currentConversationID,
+            title: Conversation.autoTitle(from: messages),
+            startedAt: conversationStartedAt,
+            messages: messages
+        )
+        store.save(convo)
+        savedConversations = store.conversations
     }
 
     // MARK: - Voice input

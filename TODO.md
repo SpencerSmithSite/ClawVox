@@ -48,7 +48,7 @@
 - [x] **U-03** Full settings panel — Apple voice identifier picker added (locale-filtered, quality stars); OpenAI voice picker already present
 - [x] **U-04** Connection setup wizard (first-run onboarding) — 4-step wizard: Welcome → Connect (URL + test) → Voice → Done; gated by `hasCompletedOnboarding` in `SettingsViewModel`
 - [x] **U-05** Dark theme + glass morphism styling — `glassCard` modifier (ultraThinMaterial + hairline border); applied to assistant bubbles, input field; material backgrounds on header/input bars; accent glow on user bubbles
-- [ ] **U-06** Conversation history (list, search, clear across sessions)
+- [x] **U-06** Conversation history — `ConversationStore` persists to `~/Library/Application Support/ClawVox/conversations/`; auto-saves on clear; `HistoryView` (list, search, tap-to-load, swipe-to-delete, clear-all); clock button in header
 
 ---
 
