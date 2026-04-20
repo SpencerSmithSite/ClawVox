@@ -165,6 +165,14 @@ final class ConversationViewModel: ObservableObject {
         savedConversations = store.conversations
     }
 
+    // MARK: - Connection
+
+    func checkConnection() {
+        Task {
+            _ = await client.checkConnection()
+        }
+    }
+
     // MARK: - Voice input
 
     func toggleMic() {

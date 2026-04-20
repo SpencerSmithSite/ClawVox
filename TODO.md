@@ -49,6 +49,7 @@
 - [x] **U-04** Connection setup wizard (first-run onboarding) — 4-step wizard: Welcome → Connect (URL + test) → Voice → Done; gated by `hasCompletedOnboarding` in `SettingsViewModel`
 - [x] **U-05** Dark theme + glass morphism styling — `glassCard` modifier (ultraThinMaterial + hairline border); applied to assistant bubbles, input field; material backgrounds on header/input bars; accent glow on user bubbles
 - [x] **U-06** Conversation history — `ConversationStore` persists to `~/Library/Application Support/ClawVox/conversations/`; auto-saves on clear; `HistoryView` (list, search, tap-to-load, swipe-to-delete, clear-all); clock button in header
+- [x] **U-07** Connection error surfacing — retry button (↺) appears next to connection badge in MainWindowView header and MenuBarView when `connectionState == .error`; MenuBarView now shows actual error message from the associated value; `ConversationViewModel.checkConnection()` triggers `client.checkConnection()` to re-test the gateway
 
 ---
 
@@ -88,10 +89,10 @@
 | Phase 0 — Research | 0 / 10 | 10 |
 | Phase 1 — Foundation | 6 / 6 | 0 |
 | Phase 2 — Voice | 6 / 6 | 0 |
-| Phase 3 — Polish UI | 2 / 6 | 4 |
+| Phase 3 — Polish UI | 7 / 7 | 0 |
 | Phase 4 — Cloud Voice | 0 / 5 | 5 |
 | Phase 5 — Distribution | 0 / 5 | 5 |
 | Phase 6 — Beta | 1 / 4 | 3 |
-| **Total** | **15 / 42** | **27** |
+| **Total** | **20 / 42** | **22** |
 
-**Next recommended task:** U-03 (Apple voice identifier picker in Settings) or U-04 (first-run onboarding wizard).
+**Next recommended task:** C-01 (provider protocol architecture) or D-05 (GitHub Actions CI/CD pipeline).

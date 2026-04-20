@@ -86,6 +86,15 @@ struct MainWindowView: View {
             Text(connectionLabel)
                 .font(.caption)
                 .foregroundStyle(.secondary)
+            if case .error = conversationVM.connectionState {
+                Button(action: { conversationVM.checkConnection() }) {
+                    Image(systemName: "arrow.clockwise")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
+                .buttonStyle(.plain)
+                .help("Retry connection")
+            }
         }
     }
 

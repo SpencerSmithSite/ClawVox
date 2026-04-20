@@ -20,6 +20,15 @@ struct MenuBarView: View {
                 Text(connectionLabel)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
+                if case .error = conversationVM.connectionState {
+                    Button(action: { conversationVM.checkConnection() }) {
+                        Image(systemName: "arrow.clockwise")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .buttonStyle(.plain)
+                    .help("Retry connection")
+                }
             }
 
             Spacer()
@@ -48,10 +57,10 @@ struct MenuBarView: View {
 
     private var connectionLabel: String {
         switch conversationVM.connectionState {
-        case .connected:    return "Connected"
-        case .connecting:   return "Connecting…"
-        case .disconnected: return "Disconnected"
-        case .error:        return "Connection error"
+        case .connected:         return "Connected"
+        case .connecting:        return "Connecting…"
+        case .disconnected:      return "Disconnected"
+        case .error(let msg):    return msg
         }
     }
 }
