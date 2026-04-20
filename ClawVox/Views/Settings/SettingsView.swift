@@ -1,7 +1,15 @@
 import SwiftUI
+import AVFoundation
 
 struct SettingsView: View {
     @EnvironmentObject private var settingsVM: SettingsViewModel
+
+    private let appleVoices: [AVSpeechSynthesisVoice] = {
+        let locale = Locale.current.language.languageCode?.identifier ?? "en"
+        let all = TTSService.availableVoices()
+        let matching = all.filter { $0.language.hasPrefix(locale) }
+        return matching.isEmpty ? all : matching
+    }()
 
     var body: some View {
         Form {
@@ -29,6 +37,14 @@ struct SettingsView: View {
                 Picker("TTS Provider", selection: $settingsVM.settings.ttsProvider) {
                     ForEach(AppSettings.TTSProvider.allCases, id: \.self) { provider in
                         Text(provider.rawValue).tag(provider)
+                    }
+                }
+                if settingsVM.settings.ttsProvider == .apple {
+                    Picker("Voice", selection: $settingsVM.settings.selectedVoiceIdentifier) {
+                        Text("System Default").tag("")
+                        ForEach(appleVoices, id: \.identifier) { voice in
+                            Text(voiceLabel(voice)).tag(voice.identifier)
+                        }
                     }
                 }
                 if settingsVM.settings.ttsProvider == .openai {
@@ -73,7 +89,15 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .padding()
-        .frame(width: 480, height: 440)
+        .frame(width: 480, height: 460)
+    }
+
+    private func voiceLabel(_ voice: AVSpeechSynthesisVoice) -> String {
+        switch voice.quality {
+        case .premium:  return "\(voice.name) ★★"
+        case .enhanced: return "\(voice.name) ★"
+        default:        return voice.name
+        }
     }
 }
 

@@ -45,7 +45,7 @@
 
 - [x] **U-01** Animated orb visualizer (responds to audio input/output levels)
 - [x] **U-02** Streaming text display (token-by-token typewriter effect)
-- [ ] **U-03** Full settings panel — basic panel exists; missing individual voice identifier picker and advanced options
+- [x] **U-03** Full settings panel — Apple voice identifier picker added (locale-filtered, quality stars); OpenAI voice picker already present
 - [ ] **U-04** Connection setup wizard (first-run onboarding) — `OnboardingView` is a placeholder only
 - [ ] **U-05** Dark theme + glass morphism styling — base dark theme in place; glass morphism not done
 - [ ] **U-06** Conversation history (list, search, clear across sessions)
