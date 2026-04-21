@@ -1,5 +1,6 @@
 import Foundation
 import AVFoundation
+import Combine
 
 /// Text-to-speech service using Apple's AVSpeechSynthesizer.
 @MainActor
@@ -36,6 +37,12 @@ final class TTSService: NSObject, ObservableObject {
     static func availableVoices() -> [AVSpeechSynthesisVoice] {
         AVSpeechSynthesisVoice.speechVoices()
     }
+}
+
+// MARK: - TTSServiceProtocol
+
+extension TTSService: TTSServiceProtocol {
+    var isSpeakingPublisher: AnyPublisher<Bool, Never> { $isSpeaking.eraseToAnyPublisher() }
 }
 
 extension TTSService: AVSpeechSynthesizerDelegate {

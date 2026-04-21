@@ -28,9 +28,11 @@
 		AA76FDCA88EF6E534764135B /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DDB5FFBA699048914E645 /* KeychainService.swift */; };
 		AE6BC99658C8ECA657EC4A78 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67D59BDE3888787FF2B1121 /* ConnectionState.swift */; };
 		B4417A7BA85B9FE1996C8E96 /* OpenClawClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4F7905E4C1DFC0EE7484D7 /* OpenClawClientTests.swift */; };
+		C512CFF9431A7AF7DC524F37 /* TTSServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395DB406334DBC03DF1CAB97 /* TTSServiceProtocol.swift */; };
 		C8F017012A2DC2376E848823 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C4243B9487804C3EDFBC6 /* SettingsViewModel.swift */; };
 		D28E0153D346B25F76ABA344 /* WhisperSTTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECFED01EBC6F57C5EA71C64 /* WhisperSTTService.swift */; };
 		D4223B07BABDDA102DAF3DBE /* WebSocketClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144E52EFA0584275E421041 /* WebSocketClientTests.swift */; };
+		D755613C2B8EFE28FA022E71 /* STTServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD623A9E6CF70B3B43A677 /* STTServiceProtocol.swift */; };
 		EB14A7272B4090B395E5F4A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3974396A13917ABCE7AB6 /* Extensions.swift */; };
 		EB6403BCDB6C8F3E14955BA9 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */; };
 		EE1545CE8412A746D5B0FDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */; };
@@ -51,6 +53,7 @@
 /* Begin PBXFileReference section */
 		303C2D95DD12B07984F27692 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		35ADC0E194C05A90B52F3D0D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		395DB406334DBC03DF1CAB97 /* TTSServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSServiceProtocol.swift; sourceTree = "<group>"; };
 		3E08189A2080983FD0D73A09 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		401C4243B9487804C3EDFBC6 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4A19C4B2ED3EE943556A8E74 /* ClawVox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClawVox.entitlements; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		E144E52EFA0584275E421041 /* WebSocketClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClientTests.swift; sourceTree = "<group>"; };
 		E154345A4EC9BAB7C455ECD5 /* ClawVox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClawVox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E16A6A338FC3B040751B1C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E1BD623A9E6CF70B3B43A677 /* STTServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTServiceProtocol.swift; sourceTree = "<group>"; };
 		E6DC6DC03DCD9B2815E94536 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
 		EA0E2D2FBED253DB003B2E2B /* ClawVoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClawVoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F051B1F3A2BDEEB77ADFACD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -257,7 +261,9 @@
 				B55DDB5FFBA699048914E645 /* KeychainService.swift */,
 				8893EC0F8E0B9EFFF64E8095 /* OpenAITTSService.swift */,
 				CF1830ABA0FAB68E82B36A86 /* SpeechService.swift */,
+				E1BD623A9E6CF70B3B43A677 /* STTServiceProtocol.swift */,
 				9D1278247ED2653C5381A5EE /* TTSService.swift */,
+				395DB406334DBC03DF1CAB97 /* TTSServiceProtocol.swift */,
 				BECFED01EBC6F57C5EA71C64 /* WhisperSTTService.swift */,
 			);
 			path = Services;
@@ -375,10 +381,12 @@
 				8963DFF66E79BB5557920787 /* OpenAITTSService.swift in Sources */,
 				1B9C115E0A293F9FE3692867 /* OpenClawClient.swift in Sources */,
 				6FE039BB0A46E825ADE409D2 /* OrbView.swift in Sources */,
+				D755613C2B8EFE28FA022E71 /* STTServiceProtocol.swift in Sources */,
 				6C51120D4002F6E8442A318D /* SettingsView.swift in Sources */,
 				C8F017012A2DC2376E848823 /* SettingsViewModel.swift in Sources */,
 				50838CEDB981A0CCC2A3B6FA /* SpeechService.swift in Sources */,
 				554FB33ED2CA48BCC53C610E /* TTSService.swift in Sources */,
+				C512CFF9431A7AF7DC524F37 /* TTSServiceProtocol.swift in Sources */,
 				F942D22D359F3A42D00C668F /* WebSocketClient.swift in Sources */,
 				D28E0153D346B25F76ABA344 /* WhisperSTTService.swift in Sources */,
 			);

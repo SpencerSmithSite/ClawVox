@@ -55,7 +55,7 @@
 
 ## Phase 4 — Cloud Voice (Optional)
 
-- [ ] **C-01** Provider selection architecture (protocol + implementations)
+- [x] **C-01** Provider selection architecture (protocol + implementations)
 - [ ] **C-02** ElevenLabs TTS provider
 - [ ] **C-03** OpenAI TTS provider
 - [ ] **C-04** OpenAI Whisper STT provider
@@ -90,9 +90,9 @@
 | Phase 1 — Foundation | 6 / 6 | 0 |
 | Phase 2 — Voice | 6 / 6 | 0 |
 | Phase 3 — Polish UI | 7 / 7 | 0 |
-| Phase 4 — Cloud Voice | 0 / 5 | 5 |
+| Phase 4 — Cloud Voice | 1 / 5 | 4 |
 | Phase 5 — Distribution | 1 / 5 | 4 |
 | Phase 6 — Beta | 1 / 4 | 3 |
-| **Total** | **21 / 42** | **21** |
+| **Total** | **22 / 42** | **20** |
 
-**Next recommended task:** C-01 (provider protocol architecture) or D-01 (Xcode release archive build scripts).
+**Next recommended task:** C-02 (ElevenLabs TTS provider) or D-01 (Xcode release archive build scripts).

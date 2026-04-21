@@ -27,6 +27,28 @@ final class ConversationViewModel: ObservableObject {
     private var currentConversationID = UUID()
     private var conversationStartedAt = Date.now
 
+    // MARK: - Protocol-typed accessors (C-01)
+
+    /// The TTS backend selected by current settings.
+    private var activeTTSService: any TTSServiceProtocol {
+        switch currentSettings.ttsProvider {
+        case .apple:      return ttsService
+        case .openai:     return openAITTSService
+        case .elevenlabs: return ttsService  // placeholder until C-02
+        }
+    }
+
+    /// The STT backend selected by current settings.
+    private var activeSTTService: any STTServiceProtocol {
+        switch currentSettings.sttProvider {
+        case .apple:   return speechService
+        case .whisper: return whisperService
+        }
+    }
+
+    /// All TTS backends — used to stop every backend on clear/load regardless of which is active.
+    private var allTTSServices: [any TTSServiceProtocol] { [ttsService, openAITTSService] }
+
     init(settings: AppSettings = AppSettings()) {
         self.currentSettings = settings
         self.client = OpenClawClient(settings: settings)
@@ -36,23 +58,17 @@ final class ConversationViewModel: ObservableObject {
             .assign(to: &$connectionState)
 
         // isSpeaking is true when either TTS service is active.
-        Publishers.CombineLatest(ttsService.$isSpeaking, openAITTSService.$isSpeaking)
+        Publishers.CombineLatest(ttsService.isSpeakingPublisher, openAITTSService.isSpeakingPublisher)
             .map { $0 || $1 }
             .assign(to: &$isSpeaking)
 
         // Merge isListening from both STT services — only one is active at a time.
-        Publishers.Merge(
-            speechService.$isListening,
-            whisperService.$isListening
-        )
-        .assign(to: &$isListening)
+        Publishers.Merge(speechService.isListeningPublisher, whisperService.isListeningPublisher)
+            .assign(to: &$isListening)
 
         // Merge audioLevel from both STT services.
-        Publishers.Merge(
-            speechService.$audioLevel,
-            whisperService.$audioLevel
-        )
-        .assign(to: &$audioLevel)
+        Publishers.Merge(speechService.audioLevelPublisher, whisperService.audioLevelPublisher)
+            .assign(to: &$audioLevel)
 
         // Route final transcripts from both STT services into sendMessage.
         let handleTranscript: (String) -> Void = { [weak self] text in
@@ -105,14 +121,7 @@ final class ConversationViewModel: ObservableObject {
             }
             isLoading = false
             if isTTSEnabled && !assistantContent.isEmpty {
-                switch currentSettings.ttsProvider {
-                case .apple:
-                    ttsService.speak(assistantContent)
-                case .openai:
-                    openAITTSService.speak(assistantContent)
-                case .elevenlabs:
-                    ttsService.speak(assistantContent)
-                }
+                activeTTSService.speak(assistantContent)
             }
         }
     }
@@ -125,8 +134,7 @@ final class ConversationViewModel: ObservableObject {
 
     func clearConversation() {
         cancelStream()
-        ttsService.stop()
-        openAITTSService.stop()
+        allTTSServices.forEach { $0.stop() }
         saveCurrentConversationIfNeeded()
         messages.removeAll()
         currentConversationID = UUID()
@@ -135,8 +143,7 @@ final class ConversationViewModel: ObservableObject {
 
     func loadConversation(_ conversation: Conversation) {
         cancelStream()
-        ttsService.stop()
-        openAITTSService.stop()
+        allTTSServices.forEach { $0.stop() }
         saveCurrentConversationIfNeeded()
         messages = conversation.messages
         currentConversationID = conversation.id
@@ -176,15 +183,9 @@ final class ConversationViewModel: ObservableObject {
     // MARK: - Voice input
 
     func toggleMic() {
-        // Stop whichever service is currently active.
-        if speechService.isListening {
-            speechService.stopListening()
-            return
-        }
-        if whisperService.isListening {
-            whisperService.stopListening()
-            return
-        }
+        // Stop whichever STT backend is currently active.
+        if speechService.isListening { speechService.stopListening(); return }
+        if whisperService.isListening { whisperService.stopListening(); return }
 
         // Start the provider selected in settings.
         switch currentSettings.sttProvider {
@@ -195,7 +196,7 @@ final class ConversationViewModel: ObservableObject {
                 speechService.startListening()
             }
         case .whisper:
-            whisperService.startListening()
+            activeSTTService.startListening()
         }
     }
 

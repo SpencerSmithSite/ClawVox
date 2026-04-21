@@ -1,5 +1,6 @@
 import Foundation
 import AVFoundation
+import Combine
 
 /// Text-to-speech via the OpenAI `/v1/audio/speech` API.
 ///
@@ -87,6 +88,12 @@ final class OpenAITTSService: NSObject, ObservableObject {
         }
         return data
     }
+}
+
+// MARK: - TTSServiceProtocol
+
+extension OpenAITTSService: TTSServiceProtocol {
+    var isSpeakingPublisher: AnyPublisher<Bool, Never> { $isSpeaking.eraseToAnyPublisher() }
 }
 
 // MARK: - AVAudioPlayerDelegate

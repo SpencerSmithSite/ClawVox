@@ -184,3 +184,10 @@ final class SpeechService: ObservableObject {
 }
 
 // AVAudioPCMBuffer.rms is defined in Utilities/Extensions.swift
+
+// MARK: - STTServiceProtocol
+
+extension SpeechService: STTServiceProtocol {
+    var isListeningPublisher: AnyPublisher<Bool, Never> { $isListening.eraseToAnyPublisher() }
+    var audioLevelPublisher: AnyPublisher<Float, Never> { $audioLevel.eraseToAnyPublisher() }
+}

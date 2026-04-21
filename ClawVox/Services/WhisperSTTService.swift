@@ -224,6 +224,13 @@ final class WhisperSTTService: ObservableObject {
     }
 }
 
+// MARK: - STTServiceProtocol
+
+extension WhisperSTTService: STTServiceProtocol {
+    var isListeningPublisher: AnyPublisher<Bool, Never> { $isListening.eraseToAnyPublisher() }
+    var audioLevelPublisher: AnyPublisher<Float, Never> { $audioLevel.eraseToAnyPublisher() }
+}
+
 // MARK: - Errors
 
 enum WhisperError: LocalizedError {
