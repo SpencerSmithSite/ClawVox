@@ -18,6 +18,7 @@ final class ConversationViewModel: ObservableObject {
     private let client: OpenClawClient
     private let ttsService = TTSService()
     private let openAITTSService = OpenAITTSService()
+    private let elevenlabsTTSService = ElevenLabsTTSService()
     private let speechService = SpeechService()
     private let whisperService = WhisperSTTService()
     private var streamTask: Task<Void, Never>?
@@ -34,7 +35,7 @@ final class ConversationViewModel: ObservableObject {
         switch currentSettings.ttsProvider {
         case .apple:      return ttsService
         case .openai:     return openAITTSService
-        case .elevenlabs: return ttsService  // placeholder until C-02
+        case .elevenlabs: return elevenlabsTTSService
         }
     }
 
@@ -47,7 +48,7 @@ final class ConversationViewModel: ObservableObject {
     }
 
     /// All TTS backends — used to stop every backend on clear/load regardless of which is active.
-    private var allTTSServices: [any TTSServiceProtocol] { [ttsService, openAITTSService] }
+    private var allTTSServices: [any TTSServiceProtocol] { [ttsService, openAITTSService, elevenlabsTTSService] }
 
     init(settings: AppSettings = AppSettings()) {
         self.currentSettings = settings
@@ -57,10 +58,14 @@ final class ConversationViewModel: ObservableObject {
         client.$connectionState
             .assign(to: &$connectionState)
 
-        // isSpeaking is true when either TTS service is active.
-        Publishers.CombineLatest(ttsService.isSpeakingPublisher, openAITTSService.isSpeakingPublisher)
-            .map { $0 || $1 }
-            .assign(to: &$isSpeaking)
+        // isSpeaking is true when any TTS service is active.
+        Publishers.CombineLatest3(
+            ttsService.isSpeakingPublisher,
+            openAITTSService.isSpeakingPublisher,
+            elevenlabsTTSService.isSpeakingPublisher
+        )
+        .map { $0 || $1 || $2 }
+        .assign(to: &$isSpeaking)
 
         // Merge isListening from both STT services — only one is active at a time.
         Publishers.Merge(speechService.isListeningPublisher, whisperService.isListeningPublisher)
@@ -208,5 +213,6 @@ final class ConversationViewModel: ObservableObject {
         }
         whisperService.configure(apiKey: settings.openAIAPIKey)
         openAITTSService.configure(apiKey: settings.openAIAPIKey, voice: settings.openAITTSVoice)
+        elevenlabsTTSService.configure(apiKey: settings.elevenlabsAPIKey, voiceID: settings.elevenlabsVoiceID)
     }
 }

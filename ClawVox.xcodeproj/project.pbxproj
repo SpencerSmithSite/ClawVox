@@ -23,6 +23,7 @@
 		6C51120D4002F6E8442A318D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6CDC10B6688A33620E8B45 /* SettingsView.swift */; };
 		6EEA4AE973F00BA7AEBB2BE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0210F7CC29A183A1C37BAED /* Constants.swift */; };
 		6FE039BB0A46E825ADE409D2 /* OrbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5BDD80495E74869075914D /* OrbView.swift */; };
+		7757CD8B6A9A24140BC9F960 /* ElevenLabsTTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208F15966E665F781B22861 /* ElevenLabsTTSService.swift */; };
 		8963DFF66E79BB5557920787 /* OpenAITTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8893EC0F8E0B9EFFF64E8095 /* OpenAITTSService.swift */; };
 		9C37FD4D430A701705A94BD6 /* ClawVoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E0BB373E6AE73AB887AC06 /* ClawVoxApp.swift */; };
 		AA76FDCA88EF6E534764135B /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55DDB5FFBA699048914E645 /* KeychainService.swift */; };
@@ -73,6 +74,7 @@
 		BA944012932658BF2F02FD76 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		BECFED01EBC6F57C5EA71C64 /* WhisperSTTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperSTTService.swift; sourceTree = "<group>"; };
 		BF4E0F7D3D96A0D124690ADD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C208F15966E665F781B22861 /* ElevenLabsTTSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenLabsTTSService.swift; sourceTree = "<group>"; };
 		CF1830ABA0FAB68E82B36A86 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		CF2E344BA8C1CC082CC89496 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D0D730E8E562C6EA4C59F351 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				6F07C25C9D3AF92021D42A50 /* ConversationStore.swift */,
+				C208F15966E665F781B22861 /* ElevenLabsTTSService.swift */,
 				B55DDB5FFBA699048914E645 /* KeychainService.swift */,
 				8893EC0F8E0B9EFFF64E8095 /* OpenAITTSService.swift */,
 				CF1830ABA0FAB68E82B36A86 /* SpeechService.swift */,
@@ -371,6 +374,7 @@
 				1CAE0871289FFA281508E15B /* Conversation.swift in Sources */,
 				F9524C833203AFF56F2DA6CA /* ConversationStore.swift in Sources */,
 				0038B12C20F32E8306685A99 /* ConversationViewModel.swift in Sources */,
+				7757CD8B6A9A24140BC9F960 /* ElevenLabsTTSService.swift in Sources */,
 				EB14A7272B4090B395E5F4A3 /* Extensions.swift in Sources */,
 				615DDF2B7CD4F4773735EA3A /* HistoryView.swift in Sources */,
 				AA76FDCA88EF6E534764135B /* KeychainService.swift in Sources */,

@@ -12,10 +12,12 @@ final class SettingsViewModel: ObservableObject {
         static let selectedVoiceIdentifier = "selectedVoiceIdentifier"
         static let hotkey = "hotkey"
         static let orbColor = "orbColor"
-        static let openAITTSVoice = "openAITTSVoice"
+        static let openAITTSVoice        = "openAITTSVoice"
+        static let elevenlabsVoiceID     = "elevenlabsVoiceID"
     }
-    private static let authTokenKeychainKey    = "authToken"
-    private static let openAIAPIKeyKeychainKey = "openAIAPIKey"
+    private static let authTokenKeychainKey        = "authToken"
+    private static let openAIAPIKeyKeychainKey     = "openAIAPIKey"
+    private static let elevenlabsAPIKeyKeychainKey = "elevenlabsAPIKey"
     /// Legacy Keychain key from V-05; read once during migration, then deleted.
     private static let legacyWhisperKeyKeychainKey = "whisperAPIKey"
 
@@ -36,6 +38,7 @@ final class SettingsViewModel: ObservableObject {
         defaults.set(s.hotkey, forKey: UserDefaultsKeys.hotkey)
         defaults.set(s.orbColor, forKey: UserDefaultsKeys.orbColor)
         defaults.set(s.openAITTSVoice, forKey: UserDefaultsKeys.openAITTSVoice)
+        defaults.set(s.elevenlabsVoiceID, forKey: UserDefaultsKeys.elevenlabsVoiceID)
 
         if s.authToken.isEmpty {
             try? KeychainService.delete(forKey: Self.authTokenKeychainKey)
@@ -47,6 +50,12 @@ final class SettingsViewModel: ObservableObject {
             try? KeychainService.delete(forKey: Self.openAIAPIKeyKeychainKey)
         } else {
             try? KeychainService.save(s.openAIAPIKey, forKey: Self.openAIAPIKeyKeychainKey)
+        }
+
+        if s.elevenlabsAPIKey.isEmpty {
+            try? KeychainService.delete(forKey: Self.elevenlabsAPIKeyKeychainKey)
+        } else {
+            try? KeychainService.save(s.elevenlabsAPIKey, forKey: Self.elevenlabsAPIKeyKeychainKey)
         }
     }
 
@@ -90,8 +99,13 @@ final class SettingsViewModel: ObservableObject {
         if let voice = defaults.string(forKey: UserDefaultsKeys.openAITTSVoice) {
             s.openAITTSVoice = voice
         }
+        if let voiceID = defaults.string(forKey: UserDefaultsKeys.elevenlabsVoiceID) {
+            s.elevenlabsVoiceID = voiceID
+        }
 
         s.authToken = (try? KeychainService.retrieve(forKey: Self.authTokenKeychainKey)) ?? ""
+
+        s.elevenlabsAPIKey = (try? KeychainService.retrieve(forKey: Self.elevenlabsAPIKeyKeychainKey)) ?? ""
 
         // Load OpenAI API key; migrate from legacy "whisperAPIKey" if present.
         if let key = try? KeychainService.retrieve(forKey: Self.openAIAPIKeyKeychainKey), !key.isEmpty {

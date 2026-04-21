@@ -58,6 +58,15 @@ struct SettingsView: View {
                         }
                     }
                 }
+                if settingsVM.settings.ttsProvider == .elevenlabs {
+                    SecureField("ElevenLabs API Key", text: $settingsVM.settings.elevenlabsAPIKey)
+                        .textFieldStyle(.roundedBorder)
+                    Picker("Voice", selection: $settingsVM.settings.elevenlabsVoiceID) {
+                        ForEach(AppSettings.elevenlabsVoices) { voice in
+                            Text(voice.name).tag(voice.id)
+                        }
+                    }
+                }
             }
 
             Section("Appearance") {
