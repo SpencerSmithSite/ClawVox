@@ -1,6 +1,10 @@
 import Foundation
 import Combine
 
+enum APIKeyTestState: Equatable {
+    case idle, testing, valid, invalid(String)
+}
+
 @MainActor
 final class SettingsViewModel: ObservableObject {
     @Published var settings: AppSettings = AppSettings()
@@ -22,6 +26,8 @@ final class SettingsViewModel: ObservableObject {
     private static let legacyWhisperKeyKeychainKey = "whisperAPIKey"
 
     @Published var hasCompletedOnboarding: Bool = false
+    @Published var openAIKeyTestState: APIKeyTestState = .idle
+    @Published var elevenlabsKeyTestState: APIKeyTestState = .idle
 
     init() {
         hasCompletedOnboarding = UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
@@ -56,6 +62,38 @@ final class SettingsViewModel: ObservableObject {
             try? KeychainService.delete(forKey: Self.elevenlabsAPIKeyKeychainKey)
         } else {
             try? KeychainService.save(s.elevenlabsAPIKey, forKey: Self.elevenlabsAPIKeyKeychainKey)
+        }
+    }
+
+    func testOpenAIKey() {
+        guard !settings.openAIAPIKey.isEmpty else { return }
+        openAIKeyTestState = .testing
+        Task {
+            do {
+                var request = URLRequest(url: URL(string: "https://api.openai.com/v1/models")!)
+                request.setValue("Bearer \(settings.openAIAPIKey)", forHTTPHeaderField: "Authorization")
+                let (_, response) = try await URLSession.shared.data(for: request)
+                let code = (response as? HTTPURLResponse)?.statusCode ?? 0
+                openAIKeyTestState = code == 200 ? .valid : .invalid("HTTP \(code)")
+            } catch {
+                openAIKeyTestState = .invalid(error.localizedDescription)
+            }
+        }
+    }
+
+    func testElevenLabsKey() {
+        guard !settings.elevenlabsAPIKey.isEmpty else { return }
+        elevenlabsKeyTestState = .testing
+        Task {
+            do {
+                var request = URLRequest(url: URL(string: "https://api.elevenlabs.io/v1/user")!)
+                request.setValue(settings.elevenlabsAPIKey, forHTTPHeaderField: "xi-api-key")
+                let (_, response) = try await URLSession.shared.data(for: request)
+                let code = (response as? HTTPURLResponse)?.statusCode ?? 0
+                elevenlabsKeyTestState = code == 200 ? .valid : .invalid("HTTP \(code)")
+            } catch {
+                elevenlabsKeyTestState = .invalid(error.localizedDescription)
+            }
         }
     }
 

@@ -28,8 +28,13 @@ struct SettingsView: View {
                     }
                 }
                 if settingsVM.settings.sttProvider == .whisper {
-                    SecureField("OpenAI API Key", text: $settingsVM.settings.openAIAPIKey)
-                        .textFieldStyle(.roundedBorder)
+                    apiKeyRow(
+                        label: "OpenAI API Key",
+                        key: $settingsVM.settings.openAIAPIKey,
+                        testState: settingsVM.openAIKeyTestState,
+                        onTest: { settingsVM.testOpenAIKey() },
+                        onClear: { settingsVM.openAIKeyTestState = .idle }
+                    )
                 }
             }
 
@@ -49,8 +54,13 @@ struct SettingsView: View {
                 }
                 if settingsVM.settings.ttsProvider == .openai {
                     if settingsVM.settings.sttProvider != .whisper {
-                        SecureField("OpenAI API Key", text: $settingsVM.settings.openAIAPIKey)
-                            .textFieldStyle(.roundedBorder)
+                        apiKeyRow(
+                            label: "OpenAI API Key",
+                            key: $settingsVM.settings.openAIAPIKey,
+                            testState: settingsVM.openAIKeyTestState,
+                            onTest: { settingsVM.testOpenAIKey() },
+                            onClear: { settingsVM.openAIKeyTestState = .idle }
+                        )
                     }
                     Picker("Voice", selection: $settingsVM.settings.openAITTSVoice) {
                         ForEach(AppSettings.openAIVoices, id: \.self) { voice in
@@ -59,8 +69,13 @@ struct SettingsView: View {
                     }
                 }
                 if settingsVM.settings.ttsProvider == .elevenlabs {
-                    SecureField("ElevenLabs API Key", text: $settingsVM.settings.elevenlabsAPIKey)
-                        .textFieldStyle(.roundedBorder)
+                    apiKeyRow(
+                        label: "ElevenLabs API Key",
+                        key: $settingsVM.settings.elevenlabsAPIKey,
+                        testState: settingsVM.elevenlabsKeyTestState,
+                        onTest: { settingsVM.testElevenLabsKey() },
+                        onClear: { settingsVM.elevenlabsKeyTestState = .idle }
+                    )
                     Picker("Voice", selection: $settingsVM.settings.elevenlabsVoiceID) {
                         ForEach(AppSettings.elevenlabsVoices) { voice in
                             Text(voice.name).tag(voice.id)
@@ -99,6 +114,43 @@ struct SettingsView: View {
         .formStyle(.grouped)
         .padding()
         .frame(width: 480, height: 460)
+    }
+
+    @ViewBuilder
+    private func apiKeyRow(
+        label: String,
+        key: Binding<String>,
+        testState: APIKeyTestState,
+        onTest: @escaping () -> Void,
+        onClear: @escaping () -> Void
+    ) -> some View {
+        HStack(spacing: 6) {
+            SecureField(label, text: key)
+                .textFieldStyle(.roundedBorder)
+                .onChange(of: key.wrappedValue) { _ in onClear() }
+            apiKeyBadge(testState)
+            Button("Test") { onTest() }
+                .disabled(key.wrappedValue.isEmpty || testState == .testing)
+        }
+    }
+
+    @ViewBuilder
+    private func apiKeyBadge(_ state: APIKeyTestState) -> some View {
+        switch state {
+        case .idle:
+            EmptyView()
+        case .testing:
+            ProgressView().scaleEffect(0.7).frame(width: 18, height: 18)
+        case .valid:
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundStyle(.green)
+                .frame(width: 18, height: 18)
+        case .invalid(let msg):
+            Image(systemName: "xmark.circle.fill")
+                .foregroundStyle(.red)
+                .frame(width: 18, height: 18)
+                .help(msg)
+        }
     }
 
     private func voiceLabel(_ voice: AVSpeechSynthesisVoice) -> String {
