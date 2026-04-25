@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Direct distribution outside the Mac App Store, signed with Developer ID. -->
+    <key>method</key>
+    <string>developer-id</string>
+
+    <key>destination</key>
+    <string>export</string>
+
+    <!-- Automatic signing uses whichever Developer ID cert is in the keychain. -->
+    <key>signingStyle</key>
+    <string>automatic</string>
+
+    <key>stripSwiftSymbols</key>
+    <true/>
+
+    <key>installerSigningCertificate</key>
+    <string>Developer ID Installer</string>
+</dict>
+</plist>

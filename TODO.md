@@ -57,15 +57,15 @@
 
 - [x] **C-01** Provider selection architecture (protocol + implementations)
 - [x] **C-02** ElevenLabs TTS provider
-- [ ] **C-03** OpenAI TTS provider
-- [ ] **C-04** OpenAI Whisper STT provider
+- [x] **C-03** OpenAI TTS provider
+- [x] **C-04** OpenAI Whisper STT provider
 - [x] **C-05** API key management UI (add / remove / test keys)
 
 ---
 
 ## Phase 5 — Distribution
 
-- [ ] **D-01** Xcode build scripts for release archive
+- [x] **D-01** Xcode build scripts for release archive
 - [ ] **D-02** `pkgbuild` + `productbuild` installer creation
 - [ ] **D-03** `notarytool` submission + stapling workflow
 - [ ] **D-04** Homebrew Cask formula (`.rb` file)
@@ -90,9 +90,9 @@
 | Phase 1 — Foundation | 6 / 6 | 0 |
 | Phase 2 — Voice | 6 / 6 | 0 |
 | Phase 3 — Polish UI | 7 / 7 | 0 |
-| Phase 4 — Cloud Voice | 3 / 5 | 2 |
-| Phase 5 — Distribution | 1 / 5 | 4 |
+| Phase 4 — Cloud Voice | 5 / 5 | 0 |
+| Phase 5 — Distribution | 2 / 5 | 3 |
 | Phase 6 — Beta | 1 / 4 | 3 |
-| **Total** | **24 / 42** | **18** |
+| **Total** | **27 / 42** | **15** |
 
-**Next recommended task:** C-03/C-04 (OpenAI TTS/Whisper provider verification) or D-01 (Xcode release archive build scripts).
+**Next recommended task:** D-02 (`pkgbuild` + `productbuild` installer creation) or D-03 (`notarytool` submission + stapling workflow).
