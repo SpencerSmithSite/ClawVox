@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    productbuild distribution XML for ClawVox.
+    Usage: productbuild --distribution scripts/distribution.xml \
+                        --package-path build/ \
+                        --sign "Developer ID Installer: ..." \
+                        build/ClawVox-<version>.pkg
+-->
+<installer-gui-script minSpecVersion="1">
+    <title>ClawVox</title>
+    <organization>com.clawvox</organization>
+
+    <!-- Install to /Applications only (no user-home option). -->
+    <domains enable_localSystem="true" enable_currentUserHome="false"/>
+    <options customize="never" require-scripts="false" allow-external-scripts="false"/>
+
+    <!-- Require macOS 13 Ventura or later. -->
+    <volume-check>
+        <allowed-os-versions>
+            <os-version min="13.0"/>
+        </allowed-os-versions>
+    </volume-check>
+
+    <choices-outline>
+        <line choice="default">
+            <line choice="com.clawvox.app"/>
+        </line>
+    </choices-outline>
+
+    <choice id="default"/>
+    <choice id="com.clawvox.app" visible="false">
+        <pkg-ref id="com.clawvox.app"/>
+    </choice>
+
+    <!-- Filename is resolved relative to --package-path. -->
+    <pkg-ref id="com.clawvox.app" version="0" onConclusion="none">ClawVox-component.pkg</pkg-ref>
+</installer-gui-script>

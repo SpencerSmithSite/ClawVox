@@ -1,0 +1,7 @@
+#!/bin/bash
+# Quit ClawVox if it is running before the installer replaces the app bundle.
+if pgrep -x "ClawVox" > /dev/null 2>&1; then
+    osascript -e 'quit app "ClawVox"' > /dev/null 2>&1
+    sleep 1
+fi
+exit 0

@@ -66,7 +66,7 @@
 ## Phase 5 — Distribution
 
 - [x] **D-01** Xcode build scripts for release archive
-- [ ] **D-02** `pkgbuild` + `productbuild` installer creation
+- [x] **D-02** `pkgbuild` + `productbuild` installer creation
 - [ ] **D-03** `notarytool` submission + stapling workflow
 - [ ] **D-04** Homebrew Cask formula (`.rb` file)
 - [x] **D-05** GitHub Actions CI/CD pipeline (build → notarize → release)
@@ -91,8 +91,8 @@
 | Phase 2 — Voice | 6 / 6 | 0 |
 | Phase 3 — Polish UI | 7 / 7 | 0 |
 | Phase 4 — Cloud Voice | 5 / 5 | 0 |
-| Phase 5 — Distribution | 2 / 5 | 3 |
+| Phase 5 — Distribution | 3 / 5 | 2 |
 | Phase 6 — Beta | 1 / 4 | 3 |
-| **Total** | **27 / 42** | **15** |
+| **Total** | **28 / 42** | **14** |
 
-**Next recommended task:** D-02 (`pkgbuild` + `productbuild` installer creation) or D-03 (`notarytool` submission + stapling workflow).
+**Next recommended task:** D-03 (`notarytool` submission + stapling workflow).
