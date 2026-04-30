@@ -58,3 +58,4 @@ PROMPTS_ARCHIVE.md
 *.jpeg
 *.png
 !ClawVox/Assets.xcassets/**
+!assets/*.png
